@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  CommingSoonViewController.swift
 //  kakaoMakers
 //
 //  Created by 이민욱 on 2021/06/15.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class CommingSoonViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
