@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2256204AB1918F7A53EC17 /* Pods_kakaoMakers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599FE0DE1BF31CAF577FEFF8 /* Pods_kakaoMakers.framework */; };
+		D25985BA2678E82200395A4E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D25985B92678E82200395A4E /* Home.storyboard */; };
+		D25985BF2678E91400395A4E /* RecentlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25985BE2678E91400395A4E /* RecentlyViewController.swift */; };
+		D25985C12678E93900395A4E /* MainHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25985C02678E93900395A4E /* MainHomeViewController.swift */; };
+		D25985C32678E98200395A4E /* CommingSoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25985C22678E98200395A4E /* CommingSoonViewController.swift */; };
+		D25985C52678E98C00395A4E /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25985C42678E98C00395A4E /* LikeViewController.swift */; };
 		D2C5AE832678D75F003B123D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5AE822678D75F003B123D /* AppDelegate.swift */; };
 		D2C5AE852678D75F003B123D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5AE842678D75F003B123D /* SceneDelegate.swift */; };
 		D2C5AE8A2678D75F003B123D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C5AE882678D75F003B123D /* Main.storyboard */; };
@@ -20,6 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40415D131D234751CA9EF140 /* Pods-kakaoMakers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kakaoMakers.debug.xcconfig"; path = "Target Support Files/Pods-kakaoMakers/Pods-kakaoMakers.debug.xcconfig"; sourceTree = "<group>"; };
+		599FE0DE1BF31CAF577FEFF8 /* Pods_kakaoMakers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kakaoMakers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6139545570FCF62347124ADD /* Pods-kakaoMakers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kakaoMakers.release.xcconfig"; path = "Target Support Files/Pods-kakaoMakers/Pods-kakaoMakers.release.xcconfig"; sourceTree = "<group>"; };
+		D25985B92678E82200395A4E /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		D25985BE2678E91400395A4E /* RecentlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyViewController.swift; sourceTree = "<group>"; };
+		D25985C02678E93900395A4E /* MainHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewController.swift; sourceTree = "<group>"; };
+		D25985C22678E98200395A4E /* CommingSoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommingSoonViewController.swift; sourceTree = "<group>"; };
+		D25985C42678E98C00395A4E /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
 		D2C5AE7F2678D75F003B123D /* kakaoMakers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kakaoMakers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C5AE822678D75F003B123D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2C5AE842678D75F003B123D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,17 +53,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2256204AB1918F7A53EC17 /* Pods_kakaoMakers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		954747C566429AACB66B978F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				599FE0DE1BF31CAF577FEFF8 /* Pods_kakaoMakers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D25985BB2678E8B900395A4E /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				D2C5AE882678D75F003B123D /* Main.storyboard */,
+				D25985B92678E82200395A4E /* Home.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		D25985BC2678E8E000395A4E /* HomeUI */ = {
+			isa = PBXGroup;
+			children = (
+				D2C5AE962678DACC003B123D /* HomeViewController.swift */,
+				D25985BE2678E91400395A4E /* RecentlyViewController.swift */,
+				D25985C02678E93900395A4E /* MainHomeViewController.swift */,
+				D25985C22678E98200395A4E /* CommingSoonViewController.swift */,
+				D25985C42678E98C00395A4E /* LikeViewController.swift */,
+			);
+			path = HomeUI;
+			sourceTree = "<group>";
+		};
 		D2C5AE762678D75F003B123D = {
 			isa = PBXGroup;
 			children = (
 				D2C5AE812678D75F003B123D /* kakaoMakers */,
 				D2C5AE802678D75F003B123D /* Products */,
+				E825C612184FF51C326BFAB3 /* Pods */,
+				954747C566429AACB66B978F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				D2C5AE982678DAE8003B123D /* UI */,
+				D25985BB2678E8B900395A4E /* StoryBoard */,
 				D2C5AE822678D75F003B123D /* AppDelegate.swift */,
 				D2C5AE842678D75F003B123D /* SceneDelegate.swift */,
-				D2C5AE882678D75F003B123D /* Main.storyboard */,
 				D2C5AE8D2678D760003B123D /* LaunchScreen.storyboard */,
 				D2C5AE9F2678DD90003B123D /* Assets.xcassets */,
 				D2C5AE902678D760003B123D /* Info.plist */,
@@ -78,13 +124,22 @@
 		D2C5AE982678DAE8003B123D /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D2C5AE962678DACC003B123D /* HomeViewController.swift */,
+				D25985BC2678E8E000395A4E /* HomeUI */,
 				D2C5AE992678DB2E003B123D /* SearchViewController.swift */,
 				D2C5AE9B2678DB3D003B123D /* AlarmViewController.swift */,
 				D2C5AE9D2678DB4E003B123D /* MyViewController.swift */,
 				D2C5AEA32678DF15003B123D /* TabBarViewController.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		E825C612184FF51C326BFAB3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				40415D131D234751CA9EF140 /* Pods-kakaoMakers.debug.xcconfig */,
+				6139545570FCF62347124ADD /* Pods-kakaoMakers.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,9 +149,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2C5AE932678D760003B123D /* Build configuration list for PBXNativeTarget "kakaoMakers" */;
 			buildPhases = (
+				EBA763B9DD093F555D809F18 /* [CP] Check Pods Manifest.lock */,
 				D2C5AE7B2678D75F003B123D /* Sources */,
 				D2C5AE7C2678D75F003B123D /* Frameworks */,
 				D2C5AE7D2678D75F003B123D /* Resources */,
+				7CCA75FDFFF4C65F3040A3F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,10 +204,53 @@
 				D2C5AE8F2678D760003B123D /* LaunchScreen.storyboard in Resources */,
 				D2C5AEA02678DD90003B123D /* Assets.xcassets in Resources */,
 				D2C5AE8A2678D75F003B123D /* Main.storyboard in Resources */,
+				D25985BA2678E82200395A4E /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7CCA75FDFFF4C65F3040A3F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kakaoMakers/Pods-kakaoMakers-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kakaoMakers/Pods-kakaoMakers-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kakaoMakers/Pods-kakaoMakers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBA763B9DD093F555D809F18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kakaoMakers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2C5AE7B2678D75F003B123D /* Sources */ = {
@@ -158,11 +258,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2C5AE9C2678DB3D003B123D /* AlarmViewController.swift in Sources */,
+				D25985C12678E93900395A4E /* MainHomeViewController.swift in Sources */,
 				D2C5AE832678D75F003B123D /* AppDelegate.swift in Sources */,
 				D2C5AE852678D75F003B123D /* SceneDelegate.swift in Sources */,
 				D2C5AE9A2678DB2E003B123D /* SearchViewController.swift in Sources */,
+				D25985BF2678E91400395A4E /* RecentlyViewController.swift in Sources */,
+				D25985C32678E98200395A4E /* CommingSoonViewController.swift in Sources */,
 				D2C5AEA42678DF15003B123D /* TabBarViewController.swift in Sources */,
 				D2C5AE9E2678DB4E003B123D /* MyViewController.swift in Sources */,
+				D25985C52678E98C00395A4E /* LikeViewController.swift in Sources */,
 				D2C5AE972678DACC003B123D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +411,7 @@
 		};
 		D2C5AE942678D760003B123D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40415D131D234751CA9EF140 /* Pods-kakaoMakers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -325,6 +430,7 @@
 		};
 		D2C5AE952678D760003B123D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6139545570FCF62347124ADD /* Pods-kakaoMakers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mXz-L4-ir4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -13,21 +13,21 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="jRe-OP-CO2"/>
+                    <navigationItem key="navigationItem" id="Z16-ql-hjC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034.7826086956522" y="75"/>
+            <point key="canvasLocation" x="1944.9275362318842" y="75"/>
         </scene>
-        <!--View Controller-->
+        <!--Recently View Controller-->
         <scene sceneID="FZb-wY-qHP">
             <objects>
-                <viewController id="mvy-eZ-904" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="recentlyVC" id="mvy-eZ-904" customClass="RecentlyViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hjB-A6-hk9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,12 +37,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGZ-9f-ofS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="75"/>
+            <point key="canvasLocation" x="2692.753623188406" y="75"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Home View Controller-->
         <scene sceneID="zuj-QJ-KYp">
             <objects>
-                <viewController id="PYC-wC-obj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainHomeVC" id="PYC-wC-obj" customClass="MainHomeViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R7P-7o-lWT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,12 +52,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlG-tw-Ad0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2525" y="75"/>
+            <point key="canvasLocation" x="3434.7826086956525" y="75"/>
         </scene>
-        <!--View Controller-->
+        <!--Comming Soon View Controller-->
         <scene sceneID="yBx-So-law">
             <objects>
-                <viewController id="a9W-WD-5sp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="commingSoonVC" id="a9W-WD-5sp" customClass="CommingSoonViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yFO-5o-Alc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,12 +67,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIr-iy-uDb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3271" y="75"/>
+            <point key="canvasLocation" x="4179.7101449275369" y="75"/>
         </scene>
-        <!--View Controller-->
+        <!--Like View Controller-->
         <scene sceneID="Jb3-9S-yb1">
             <objects>
-                <viewController id="0Uz-KO-l71" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="likeVC" id="0Uz-KO-l71" customClass="LikeViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8tO-3X-nUE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1sU-zj-87S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4013" y="75"/>
+            <point key="canvasLocation" x="4921.739130434783" y="75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zm4-SK-V6B">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mXz-L4-ir4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="jRe-OP-CO2"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="vxc-Ho-sft">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="waP-ps-Rwy">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wqG-U9-4uY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zmd-pU-CEL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1034.7826086956522" y="75"/>
         </scene>
     </scenes>
     <resources>
