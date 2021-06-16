@@ -10,6 +10,7 @@ pod 'ProgressHUD'
 pod 'SwiftyJSON'
 pod 'Kingfisher'
 pod 'Tabman', '~> 2.9'
+pod "ExpandableLabel"
 
   # Pods for kakaoMakers
 

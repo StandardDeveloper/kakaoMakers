@@ -6,15 +6,22 @@
 //
 
 import UIKit
+import ExpandableLabel
 
 class CommingSoonTableViewCell: UITableViewCell {
 
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var contentsLabel: UILabel!
+    @IBOutlet weak var contentsLabel: ExpandableLabel!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var alarmBtn: UIButton!
-        
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        contentsLabel.collapsed = true
+        contentsLabel.text = nil
+    }
+    
     func textColorChange (firstText: String, secondText: String) {
         
         let attributedStr = NSMutableAttributedString(string: likeLabel.text!)
@@ -26,3 +33,4 @@ class CommingSoonTableViewCell: UITableViewCell {
     }
 
 }
+

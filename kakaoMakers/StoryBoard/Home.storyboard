@@ -102,11 +102,11 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commingSoonCell" rowHeight="500" id="bcV-b5-sgQ" customClass="CommingSoonTableViewCell" customModule="kakaoMakers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="174.5" width="414" height="500"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commingSoonCell" id="bcV-b5-sgQ" customClass="CommingSoonTableViewCell" customModule="kakaoMakers" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="174.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bcV-b5-sgQ" id="j6d-dU-55e">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rRp-CU-Y6h">
@@ -121,7 +121,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ms-i5-JJp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ms-i5-JJp" customClass="ExpandableLabel" customModule="ExpandableLabel">
                                                     <rect key="frame" x="45" y="354" width="324" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -166,7 +166,7 @@
                                         <color key="backgroundColor" red="0.95686274509803915" green="0.95294117647058818" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="alarmBtn" destination="oQ7-Wv-DHL" id="fa4-yx-w82"/>
-                                            <outlet property="contentsLabel" destination="7ms-i5-JJp" id="cjt-Lh-R3H"/>
+                                            <outlet property="contentsLabel" destination="7ms-i5-JJp" id="qCY-vj-j38"/>
                                             <outlet property="likeLabel" destination="4m1-mK-Rjb" id="FiU-b9-1Fa"/>
                                             <outlet property="posterImageView" destination="rRp-CU-Y6h" id="WJ1-Pw-5A8"/>
                                             <outlet property="titleLabel" destination="rVC-qc-sds" id="UpP-t9-KOC"/>
