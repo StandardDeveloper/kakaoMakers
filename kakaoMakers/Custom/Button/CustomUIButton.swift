@@ -16,6 +16,7 @@ class CustomUIButton: UIButton {
         self.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         self.tintColor = UIColor.lightGray
         
+        
     }
 
    

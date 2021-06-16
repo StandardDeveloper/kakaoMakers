@@ -33,6 +33,7 @@ class HomeViewController: TabmanViewController {
         viewControllers.append(likeVC)
         
         self.dataSource = self
+        
         let bar = TMBar.ButtonBar()
         bar.backgroundView.style = .blur(style: .light)
         bar.backgroundColor = .white

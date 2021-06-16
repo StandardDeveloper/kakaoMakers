@@ -9,15 +9,20 @@ import UIKit
 
 class CommingSoonTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentsLabel: UILabel!
+    @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var alarmBtn: UIButton!
+        
+    func textColorChange (firstText: String, secondText: String) {
+        
+        let attributedStr = NSMutableAttributedString(string: likeLabel.text!)
+        attributedStr.addAttribute(.foregroundColor, value: UIColor.red, range: (likeLabel.text! as NSString).range(of: firstText))
+        attributedStr.addAttribute(.foregroundColor, value: UIColor.blue, range: (likeLabel.text! as NSString).range(of: secondText))
+        
+        likeLabel.attributedText = attributedStr
+        
     }
 
 }
