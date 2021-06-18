@@ -17,6 +17,7 @@
 		D25985C12678E93900395A4E /* MainHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25985C02678E93900395A4E /* MainHomeViewController.swift */; };
 		D25985C32678E98200395A4E /* CommingSoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25985C22678E98200395A4E /* CommingSoonViewController.swift */; };
 		D25985C52678E98C00395A4E /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25985C42678E98C00395A4E /* LikeViewController.swift */; };
+		D27CE089267A6AB400D7EC83 /* LikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27CE088267A6AB400D7EC83 /* LikeTableViewCell.swift */; };
 		D28AEEC1267A1DBD008E509E /* CommingSoonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28AEEC0267A1DBD008E509E /* CommingSoonTableViewCell.swift */; };
 		D28AEEC3267A3CB5008E509E /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28AEEC2267A3CB5008E509E /* CustomUIButton.swift */; };
 		D2C5AE832678D75F003B123D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5AE822678D75F003B123D /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 		D25985C02678E93900395A4E /* MainHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewController.swift; sourceTree = "<group>"; };
 		D25985C22678E98200395A4E /* CommingSoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommingSoonViewController.swift; sourceTree = "<group>"; };
 		D25985C42678E98C00395A4E /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
+		D27CE088267A6AB400D7EC83 /* LikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeTableViewCell.swift; sourceTree = "<group>"; };
 		D28AEEC0267A1DBD008E509E /* CommingSoonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommingSoonTableViewCell.swift; sourceTree = "<group>"; };
 		D28AEEC2267A3CB5008E509E /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
 		D2C5AE7F2678D75F003B123D /* kakaoMakers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kakaoMakers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				D28AEEC0267A1DBD008E509E /* CommingSoonTableViewCell.swift */,
+				D27CE088267A6AB400D7EC83 /* LikeTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				D28AEEC3267A3CB5008E509E /* CustomUIButton.swift in Sources */,
 				D25985BF2678E91400395A4E /* RecentlyViewController.swift in Sources */,
 				D25985C32678E98200395A4E /* CommingSoonViewController.swift in Sources */,
+				D27CE089267A6AB400D7EC83 /* LikeTableViewCell.swift in Sources */,
 				D2C5AEA42678DF15003B123D /* TabBarViewController.swift in Sources */,
 				D2C5AE9E2678DB4E003B123D /* MyViewController.swift in Sources */,
 				D223FF722679BE070060BD99 /* MovieNetworkManager.swift in Sources */,

@@ -18,6 +18,7 @@ class CommingSoonTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        
         contentsLabel.collapsed = true
         contentsLabel.text = nil
     }

@@ -26,7 +26,7 @@ class CommingSoonViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.rowHeight  = 600
+        tableView.rowHeight  = 650
         //tableView.estimatedRowHeight = 44
         //tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
