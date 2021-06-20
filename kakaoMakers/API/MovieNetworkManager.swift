@@ -28,10 +28,21 @@ struct MovieNetworkManager: MovieNetwork {
             
             switch results {
             
+            
             case.success(let response):
                 do {
-                    let results: MovieResults = try JSONDecoder().decode(MovieResults.self, from: response.data)
-                    completion(results.results)
+                    //print("TTTTT", response.data)
+//                    if let data = response.data {
+//                        let movieList = try? JSONDecoder().decode(MovieList.self, from: data)
+//                        completion(movieList!.movies)
+//                    }
+                    let movieList = try? JSONDecoder().decode(MovieList.self, from: response.data)
+                    if let movieList = movieList {
+                        completion(movieList.results)
+                    }
+                    //completion(movieList!.results)
+//                    let results: MovieResults = try JSONDecoder().decode(MovieResults.self, from: response.data)
+//                    completion(results.results)
                 }
                 catch let err {
                     print(err)

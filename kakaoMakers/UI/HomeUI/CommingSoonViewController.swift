@@ -15,7 +15,8 @@ class CommingSoonViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var movieNetworkProvider = MovieNetworkManager()
-    var nowPlaying: [Movie] = []
+    //var nowPlaying: [Movie] = []
+    private var movieListVM: MovieListViewModel!
     
     let numberOfCells : NSInteger = 20
     var states : Array<Bool>!
@@ -27,8 +28,6 @@ class CommingSoonViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.rowHeight  = 650
-        //tableView.estimatedRowHeight = 44
-        //tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
         
         states = [Bool](repeating: true, count: numberOfCells)
@@ -45,7 +44,8 @@ class CommingSoonViewController: UIViewController {
         
         movieNetworkProvider.getMovies(target: .nowPlaying) { results in
             
-            self.nowPlaying = results
+            
+            self.movieListVM = MovieListViewModel(nowplaying: results)
             
             OperationQueue.main.addOperation {
                 self.tableView.reloadData()
@@ -56,29 +56,50 @@ class CommingSoonViewController: UIViewController {
 }
 
 extension CommingSoonViewController: UITableViewDelegate, UITableViewDataSource, ExpandableLabelDelegate {
-
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.movieListVM == nil ? 0 : self.movieListVM.numberOfSections
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nowPlaying.count
+        return self.movieListVM.numberOfRowInSections(section)
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commingSoonCell", for: indexPath) as! CommingSoonTableViewCell
-
-        let imagePath = "https://image.tmdb.org/t/p/w500\(nowPlaying[indexPath.row].poster_path)"
-        cell.posterImageView.kf.setImage(with: URL(string: imagePath))
-        cell.titleLabel.text = nowPlaying[indexPath.row].title
         
+        let movieVM = self.movieListVM.movieAtIndex(indexPath.section, index: indexPath.row)
+        cell.titleLabel.text = movieVM.title
+        cell.contentsLabel.text = movieVM.overview
         cell.contentsLabel.setLessLinkWith(lessLink: "Close", attributes: [.foregroundColor:UIColor.red], position: .left)
         cell.layoutIfNeeded()
         cell.contentsLabel.shouldCollapse = true
         cell.contentsLabel.textReplacementType = .word
         cell.contentsLabel.numberOfLines = 5
         cell.contentsLabel.collapsed = states[indexPath.row]
-        cell.contentsLabel.text = nowPlaying[indexPath.row].overview
+        cell.contentsLabel.text = movieVM.overview
         
-        cell.textColorChange(firstText: String(nowPlaying[indexPath.row].id), secondText: "명이 기다려요")
-        cell.likeLabel.text = "\(String(nowPlaying[indexPath.row].id))명이 기다려요"
-        cell.backgroundColor = UIColor(red: 244/255, green: 243/255, blue: 244/255, alpha: 1)
+        cell.likeLabel.text = "\(movieVM.id!)명이 기다려요"
+        let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
+        cell.posterImageView.kf.setImage(with: URL(string: imagePath))
+        
+        
+        //        let imagePath = "https://image.tmdb.org/t/p/w500\(nowPlaying[indexPath.row].poster_path)"
+        //        cell.posterImageView.kf.setImage(with: URL(string: imagePath))
+        //        cell.titleLabel.text = nowPlaying[indexPath.row].title
+        //
+        //        cell.contentsLabel.setLessLinkWith(lessLink: "Close", attributes: [.foregroundColor:UIColor.red], position: .left)
+        //        cell.layoutIfNeeded()
+        //        cell.contentsLabel.shouldCollapse = true
+        //        cell.contentsLabel.textReplacementType = .word
+        //        cell.contentsLabel.numberOfLines = 5
+        //        cell.contentsLabel.collapsed = states[indexPath.row]
+        //        cell.contentsLabel.text = nowPlaying[indexPath.row].overview
+        //
+        //        cell.textColorChange(firstText: String(nowPlaying[indexPath.row].id), secondText: "명이 기다려요")
+        //        cell.likeLabel.text = "\(String(nowPlaying[indexPath.row].id))명이 기다려요"
+        //        cell.backgroundColor = UIColor(red: 244/255, green: 243/255, blue: 244/255, alpha: 1)
         return cell
     }
     
