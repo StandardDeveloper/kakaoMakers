@@ -17,11 +17,7 @@ class LikeViewController: UIViewController {
         likeTableView.delegate = self
         likeTableView.dataSource = self
         
-        likeTableView.rowHeight = 500
     }
-    
-
-
 }
 
 extension LikeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -35,8 +31,27 @@ extension LikeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = likeTableView.dequeueReusableCell(withIdentifier: "likeCell", for: indexPath) as! LikeTableViewCell
-        return cell
+        if indexPath.section == 0 {
+            likeTableView.rowHeight = 580
+            let cell = likeTableView.dequeueReusableCell(withIdentifier: "likeCell", for: indexPath) as! LikeTableViewCell
+            return cell
+        }
+        else {
+            likeTableView.rowHeight = 130
+            
+            let cell = likeTableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! LikeInfoTableViewCell
+            return cell
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 10.0
+        }
+        else {
+            return 1.0
+        }
     }
     
     

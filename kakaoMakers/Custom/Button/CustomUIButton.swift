@@ -9,7 +9,6 @@ import UIKit
 
 class CustomUIButton: UIButton {
 
-
     required init(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)!
         self.layer.cornerRadius = 5.0;

@@ -24,6 +24,8 @@
 		D27CE089267A6AB400D7EC83 /* LikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27CE088267A6AB400D7EC83 /* LikeTableViewCell.swift */; };
 		D28AEEC1267A1DBD008E509E /* CommingSoonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28AEEC0267A1DBD008E509E /* CommingSoonTableViewCell.swift */; };
 		D28AEEC3267A3CB5008E509E /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28AEEC2267A3CB5008E509E /* CustomUIButton.swift */; };
+		D2C339C42680C26600866069 /* KaKaoCustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C339C32680C26600866069 /* KaKaoCustomUIButton.swift */; };
+		D2C339C62680C7FF00866069 /* LikeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C339C52680C7FF00866069 /* LikeInfoTableViewCell.swift */; };
 		D2C5AE832678D75F003B123D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5AE822678D75F003B123D /* AppDelegate.swift */; };
 		D2C5AE852678D75F003B123D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5AE842678D75F003B123D /* SceneDelegate.swift */; };
 		D2C5AE8A2678D75F003B123D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C5AE882678D75F003B123D /* Main.storyboard */; };
@@ -56,6 +58,8 @@
 		D27CE088267A6AB400D7EC83 /* LikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeTableViewCell.swift; sourceTree = "<group>"; };
 		D28AEEC0267A1DBD008E509E /* CommingSoonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommingSoonTableViewCell.swift; sourceTree = "<group>"; };
 		D28AEEC2267A3CB5008E509E /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
+		D2C339C32680C26600866069 /* KaKaoCustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaKaoCustomUIButton.swift; sourceTree = "<group>"; };
+		D2C339C52680C7FF00866069 /* LikeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeInfoTableViewCell.swift; sourceTree = "<group>"; };
 		D2C5AE7F2678D75F003B123D /* kakaoMakers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kakaoMakers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C5AE822678D75F003B123D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2C5AE842678D75F003B123D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			children = (
 				D28AEEC0267A1DBD008E509E /* CommingSoonTableViewCell.swift */,
 				D27CE088267A6AB400D7EC83 /* LikeTableViewCell.swift */,
+				D2C339C52680C7FF00866069 /* LikeInfoTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				D28AEEC2267A3CB5008E509E /* CustomUIButton.swift */,
+				D2C339C32680C26600866069 /* KaKaoCustomUIButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 			files = (
 				D223FF752679BE130060BD99 /* Movie.swift in Sources */,
 				D2C5AE9C2678DB3D003B123D /* AlarmViewController.swift in Sources */,
+				D2C339C62680C7FF00866069 /* LikeInfoTableViewCell.swift in Sources */,
 				D253D38B267D8F21003AB457 /* MovieListViewModel.swift in Sources */,
 				D25985C12678E93900395A4E /* MainHomeViewController.swift in Sources */,
 				D2C5AE832678D75F003B123D /* AppDelegate.swift in Sources */,
@@ -366,6 +373,7 @@
 				D2C5AE9E2678DB4E003B123D /* MyViewController.swift in Sources */,
 				D253D390267D9FDC003AB457 /* MainHomeNewViewController.swift in Sources */,
 				D223FF722679BE070060BD99 /* MovieNetworkManager.swift in Sources */,
+				D2C339C42680C26600866069 /* KaKaoCustomUIButton.swift in Sources */,
 				D25985C52678E98C00395A4E /* LikeViewController.swift in Sources */,
 				D2C5AE972678DACC003B123D /* HomeViewController.swift in Sources */,
 			);
