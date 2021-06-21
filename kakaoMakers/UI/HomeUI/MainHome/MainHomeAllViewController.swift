@@ -9,21 +9,60 @@ import UIKit
 
 class MainHomeAllViewController: UIViewController {
 
+    @IBOutlet weak var mainTableView: UITableView!
+
+    var movieNetworkProvider = MovieNetworkManager()
+    private var movieListVM: MovieListViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainTableView.rowHeight = UITableView.automaticDimension
+        mainTableView.estimatedRowHeight = 500
 
-        // Do any additional setup after loading the view.
+        mainTableView.delegate = self
+        mainTableView.dataSource = self
+        
+        getMovieData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getMovieData() {
+        
+        movieNetworkProvider.getMovies(target: .nowPlaying) { results in
+            
+            
+            self.movieListVM = MovieListViewModel(nowplaying: results)
+            
+            OperationQueue.main.addOperation {
+                self.mainTableView.reloadData()
+            }
+        }
+        
     }
-    */
+    
+}
 
+extension MainHomeAllViewController: UITableViewDelegate, UITableViewDataSource {
+  
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.movieListVM == nil ? 0 : self.movieListVM.numberOfSections
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.movieListVM.numberOfRowInSections(section)
+        
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MainAllTableViewCell
+        
+        let movieVM = self.movieListVM.movieAtIndex(indexPath.section, index: indexPath.row)
+        cell.titleLabel.text = movieVM.title
+        cell.infoLabel.text = movieVM.overview
+        cell.oderLabel.text = "\(movieVM.id!)명이 주문했어요"
+        let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
+        cell.mainImageView.kf.setImage(with: URL(string: imagePath))
+        
+        
+        return cell
+    }
 }
