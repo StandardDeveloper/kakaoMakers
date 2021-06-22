@@ -10,6 +10,8 @@ import UIKit
 class MainHomeNewViewController: UIViewController {
     
     @IBOutlet weak var newTableView: UITableView!
+    @IBOutlet weak var weekLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
     
     var movieNetworkProvider = MovieNetworkManager()
     private var movieListVM: MovieListViewModel!
@@ -29,16 +31,26 @@ class MainHomeNewViewController: UIViewController {
         getMovieData()
     }
     
+    
     func getMovieData() {
         
         movieNetworkProvider.getMovies(target: .nowPlaying) { results in
             
             self.movieListVM = MovieListViewModel(nowplaying: results)
+        
+            let movieVM = self.movieListVM.movieAtIndex(1, index: 1)
+            self.weekLabel.text = movieVM.original_language
+            self.detailLabel.text = movieVM.release_data
             
             OperationQueue.main.addOperation {
                 self.newTableView.reloadData()
             }
         }
+        
+    }
+    
+    func getWeekData() {
+     
         
     }
     
