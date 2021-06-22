@@ -34,11 +34,10 @@ class MainHomeViewController: TabmanViewController {
         let bar = TMBar.ButtonBar()
         bar.backgroundView.style = .blur(style: .light)
         bar.backgroundColor = .white
-        bar.layout.contentInset = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 40)
-        bar.layout.interButtonSpacing = 40
-        //bar.layout.transitionStyle = .snap
-        //bar.layout.contentMode = .intrinsic
-        //bar.indicator.weight = .light
+        bar.layout.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+        bar.indicator.weight = .custom(value: 0)
+        bar.indicator.cornerStyle = .rounded
+        bar.fadesContentEdges = true
         
         bar.buttons.customize {
             

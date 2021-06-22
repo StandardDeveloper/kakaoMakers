@@ -16,7 +16,7 @@ class CommingSoonViewController: UIViewController {
     
     var movieNetworkProvider = MovieNetworkManager()
     //var nowPlaying: [Movie] = []
-    private var movieListVM: MovieListViewModel!
+    private var movieListVM: MovieNowPlaying!
     
     let numberOfCells : NSInteger = 20
     var states : Array<Bool>!
@@ -48,7 +48,7 @@ class CommingSoonViewController: UIViewController {
         movieNetworkProvider.getMovies(target: .nowPlaying) { results in
             
             
-            self.movieListVM = MovieListViewModel(nowplaying: results)
+            self.movieListVM = MovieNowPlaying(nowPlaying: results)
             
             OperationQueue.main.addOperation {
                 self.tableView.reloadData()

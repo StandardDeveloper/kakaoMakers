@@ -27,27 +27,19 @@ struct MovieNetworkManager: MovieNetwork {
         provider.request(target) { (results) in
             
             switch results {
-            
-            
             case.success(let response):
                 do {
-                    //print("TTTTT", response.data)
-//                    if let data = response.data {
-//                        let movieList = try? JSONDecoder().decode(MovieList.self, from: data)
-//                        completion(movieList!.movies)
-//                    }
-                    let movieList = try? JSONDecoder().decode(MovieList.self, from: response.data)
-                    if let movieList = movieList {
+                    
+                    let movieListJson = try? JSONDecoder().decode(MovieList.self, from: response.data)
+                    if let movieList = movieListJson {
                         completion(movieList.results)
                     }
-                    //completion(movieList!.results)
-//                    let results: MovieResults = try JSONDecoder().decode(MovieResults.self, from: response.data)
-//                    completion(results.results)
+                    
                 }
                 catch let err {
                     print(err)
                 }
-            
+                
             case.failure(let err):
                 print(err)
                 break
@@ -77,7 +69,7 @@ struct MovieNetworkManager: MovieNetwork {
                     ProgressHUD.dismiss()
                     print(err)
                 }
-            
+                
             case.failure(let err):
                 ProgressHUD.dismiss()
                 print(err)
@@ -86,5 +78,5 @@ struct MovieNetworkManager: MovieNetwork {
         }
         
     }
-        
+    
 }

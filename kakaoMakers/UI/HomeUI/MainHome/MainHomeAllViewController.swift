@@ -12,7 +12,7 @@ class MainHomeAllViewController: UIViewController {
     @IBOutlet weak var mainTableView: UITableView!
 
     var movieNetworkProvider = MovieNetworkManager()
-    private var movieListVM: MovieListViewModel!
+    private var movieListVM: MovieTopRated!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +31,9 @@ class MainHomeAllViewController: UIViewController {
     
     func getMovieData() {
         
-        movieNetworkProvider.getMovies(target: .nowPlaying) { results in
+        movieNetworkProvider.getMovies(target: .toRated) { results in
             
-            
-            self.movieListVM = MovieListViewModel(nowplaying: results)
+            self.movieListVM = MovieTopRated(topRated: results)
             
             OperationQueue.main.addOperation {
                 self.mainTableView.reloadData()

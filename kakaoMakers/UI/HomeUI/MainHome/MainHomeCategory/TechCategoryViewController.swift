@@ -1,13 +1,13 @@
 //
-//  MainHomeCategoryViewController.swift
+//  TechCategoryViewController.swift
 //  kakaoMakers
 //
-//  Created by 이민욱 on 2021/06/19.
+//  Created by 이민욱 on 2021/06/22.
 //
 
 import UIKit
 
-class MainHomeCategoryViewController: UIViewController {
+class TechCategoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

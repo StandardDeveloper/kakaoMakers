@@ -14,7 +14,7 @@ class MainHomeNewViewController: UIViewController {
     @IBOutlet weak var detailLabel: UILabel!
     
     var movieNetworkProvider = MovieNetworkManager()
-    private var movieListVM: MovieListViewModel!
+    private var movieListVM: MovieUpComming!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +34,9 @@ class MainHomeNewViewController: UIViewController {
     
     func getMovieData() {
         
-        movieNetworkProvider.getMovies(target: .nowPlaying) { results in
+        movieNetworkProvider.getMovies(target: .upComing) { results in
             
-            self.movieListVM = MovieListViewModel(nowplaying: results)
+            self.movieListVM = MovieUpComming(upComming: results)
         
             let movieVM = self.movieListVM.movieAtIndex(1, index: 1)
             self.weekLabel.text = movieVM.original_language
@@ -48,12 +48,6 @@ class MainHomeNewViewController: UIViewController {
         }
         
     }
-    
-    func getWeekData() {
-     
-        
-    }
-    
 }
 
 extension MainHomeNewViewController: UITableViewDelegate, UITableViewDataSource {
@@ -63,13 +57,11 @@ extension MainHomeNewViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.movieListVM.numberOfRowInSections(section)
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = newTableView.dequeueReusableCell(withIdentifier: "mainTableViewCell", for: indexPath) as! MainHomeTableViewCell
-        
         
         let movieVM = self.movieListVM.movieAtIndex(indexPath.section, index: indexPath.row)
         cell.titleLabel.text = movieVM.title

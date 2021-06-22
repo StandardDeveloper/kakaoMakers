@@ -7,36 +7,10 @@
 
 import Foundation
 
-//어떤 데이트 불러온건지? -> 무비, 티비
-struct MovieListViewModel {
-    let nowplaying: [Movie]
-}
-
-//테이블뷰에 들어가는 데이터
-extension MovieListViewModel {
-    var numberOfSections: Int {
-        return 1
-    }
-    
-    func numberOfRowInSections(_ section: Int) -> Int {
-        
-        return self.nowplaying.count
-        
-    }
-    
-    func movieAtIndex(_ section: Int, index: Int) -> MovieViewModel {
-        
-        let nowplaying = self.nowplaying[index]
-        return MovieViewModel(nowplaying)
-    }
-}
-
-//무비 안에 있는 각각에 데이터
 struct MovieViewModel {
     private let movie: Movie
 }
 
-//무비 데이터 초기화
 extension MovieViewModel {
     init(_ movie: Movie) {
         self.movie = movie
@@ -65,6 +39,5 @@ extension MovieViewModel {
     var poster_path: String? {
         return self.movie.poster_path
     }
-    
 }
 

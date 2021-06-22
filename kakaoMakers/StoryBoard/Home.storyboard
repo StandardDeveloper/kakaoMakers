@@ -154,12 +154,109 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="qhi-dj-n7d"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuO-Zy-elN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4922" y="750"/>
+            <point key="canvasLocation" x="2693" y="1431"/>
+        </scene>
+        <!--Food Category View Controller-->
+        <scene sceneID="iMH-NK-K0d">
+            <objects>
+                <viewController storyboardIdentifier="foodCategoryVC" id="7KE-ze-W13" customClass="FoodCategoryViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f1e-BQ-i7w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cOg-mC-C1O">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BMs-GN-GKf">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="l2k-ib-9Wm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="l2k-ib-9Wm" firstAttribute="trailing" secondItem="cOg-mC-C1O" secondAttribute="trailing" id="83z-yf-8Xw"/>
+                            <constraint firstItem="cOg-mC-C1O" firstAttribute="top" secondItem="l2k-ib-9Wm" secondAttribute="top" id="JLT-6S-sMx"/>
+                            <constraint firstItem="cOg-mC-C1O" firstAttribute="leading" secondItem="l2k-ib-9Wm" secondAttribute="leading" id="Orz-st-5em"/>
+                            <constraint firstItem="l2k-ib-9Wm" firstAttribute="bottom" secondItem="cOg-mC-C1O" secondAttribute="bottom" id="T1O-xe-WvO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="foodCollectionView" destination="cOg-mC-C1O" id="USn-5E-KLK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AXv-E4-bRS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3435" y="1430"/>
+        </scene>
+        <!--Beauty Category View Controller-->
+        <scene sceneID="jQa-SC-7aY">
+            <objects>
+                <viewController storyboardIdentifier="beautyCategoryVC" id="mbI-cI-Jvw" customClass="BeautyCategoryViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9gZ-4J-ovg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0mF-Ay-TFz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lv7-jK-0L8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4203" y="1428"/>
+        </scene>
+        <!--Living Category View Controller-->
+        <scene sceneID="E6v-Ur-E55">
+            <objects>
+                <viewController storyboardIdentifier="livingCategoryVC" id="fV5-DA-kCW" customClass="LivingCategoryViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G0f-G0-74i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gsa-EH-w9n"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h2w-Sc-1LN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4972" y="1430"/>
+        </scene>
+        <!--Fashion Category View Controller-->
+        <scene sceneID="8lo-Gg-9Li">
+            <objects>
+                <viewController storyboardIdentifier="fashionCategoryVC" id="mDv-fy-OgH" customClass="FashionCategoryViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T6L-QG-ooW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wc8-Nq-uPx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZrQ-1D-Ecu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5741" y="1430"/>
+        </scene>
+        <!--Tech Category View Controller-->
+        <scene sceneID="zjW-B3-pp6">
+            <objects>
+                <viewController storyboardIdentifier="techCategoryVC" id="Ahv-Bf-XR9" customClass="TechCategoryViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yyf-Gm-9sg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DxH-VL-wPw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vw5-fd-GUe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6499" y="1428"/>
         </scene>
         <!--Comming Soon View Controller-->
         <scene sceneID="yBx-So-law">
@@ -614,6 +711,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
