@@ -25,7 +25,6 @@ class MainHomeViewController: TabmanViewController {
         let mainHomeNewVC = self.storyboard?.instantiateViewController(withIdentifier: "mainHomeNewVC") as! MainHomeNewViewController
         let mainHomeCategoryVC = self.storyboard?.instantiateViewController(withIdentifier: "mainHomeCategoryVC") as! MainHomeCategoryViewController
        
-        
         viewControllers.append(mainHomeAllVC)
         viewControllers.append(mainHomeNewVC)
         viewControllers.append(mainHomeCategoryVC)

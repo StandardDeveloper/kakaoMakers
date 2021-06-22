@@ -17,13 +17,23 @@ class MainAllTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
+    }
+    
+    func configView() {
+        likeBtn.translatesAutoresizingMaskIntoConstraints = false
+        likeBtn.backgroundColor = .white
+        likeBtn.tintColor = .black
+        likeBtn.layer.cornerRadius = 5.0
+        likeBtn.layer.borderWidth = 1.0
+        likeBtn.layer.borderColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1.0).cgColor
+        
     }
 
 }

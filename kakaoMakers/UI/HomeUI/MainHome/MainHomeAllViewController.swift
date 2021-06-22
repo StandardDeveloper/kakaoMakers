@@ -62,7 +62,6 @@ extension MainHomeAllViewController: UITableViewDelegate, UITableViewDataSource 
         let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
         cell.mainImageView.kf.setImage(with: URL(string: imagePath))
         
-        
         return cell
     }
 }
