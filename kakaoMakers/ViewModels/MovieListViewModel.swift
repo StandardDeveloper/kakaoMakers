@@ -26,11 +26,8 @@ extension MovieListViewModel {
     
     func movieAtIndex(_ section: Int, index: Int) -> MovieViewModel {
         
-        
         let nowplaying = self.nowplaying[index]
         return MovieViewModel(nowplaying)
-        
-        
     }
 }
 

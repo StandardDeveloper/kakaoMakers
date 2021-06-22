@@ -37,6 +37,8 @@
 		D2C5AE9E2678DB4E003B123D /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5AE9D2678DB4E003B123D /* MyViewController.swift */; };
 		D2C5AEA02678DD90003B123D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C5AE9F2678DD90003B123D /* Assets.xcassets */; };
 		D2C5AEA42678DF15003B123D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5AEA32678DF15003B123D /* TabBarViewController.swift */; };
+		D2FF9A5F2681FE3100AFF268 /* MainNewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FF9A5E2681FE3100AFF268 /* MainNewTableViewCell.xib */; };
+		D2FF9A612682006C00AFF268 /* MainNewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF9A602682006C00AFF268 /* MainNewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		D2C5AE9D2678DB4E003B123D /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		D2C5AE9F2678DD90003B123D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2C5AEA32678DF15003B123D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		D2FF9A5E2681FE3100AFF268 /* MainNewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainNewTableViewCell.xib; sourceTree = "<group>"; };
+		D2FF9A602682006C00AFF268 /* MainNewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNewTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 				D27CE088267A6AB400D7EC83 /* LikeTableViewCell.swift */,
 				D2C339C52680C7FF00866069 /* LikeInfoTableViewCell.swift */,
 				D2C339C72680EF9100866069 /* MainAllTableViewCell.swift */,
+				D2FF9A602682006C00AFF268 /* MainNewTableViewCell.swift */,
+				D2FF9A5E2681FE3100AFF268 /* MainNewTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2C5AE8F2678D760003B123D /* LaunchScreen.storyboard in Resources */,
+				D2FF9A5F2681FE3100AFF268 /* MainNewTableViewCell.xib in Resources */,
 				D2C5AEA02678DD90003B123D /* Assets.xcassets in Resources */,
 				D2C5AE8A2678D75F003B123D /* Main.storyboard in Resources */,
 				D25985BA2678E82200395A4E /* Home.storyboard in Resources */,
@@ -372,6 +379,7 @@
 				D25985BF2678E91400395A4E /* RecentlyViewController.swift in Sources */,
 				D253D38E267D9FCE003AB457 /* MainHomeAllViewController.swift in Sources */,
 				D25985C32678E98200395A4E /* CommingSoonViewController.swift in Sources */,
+				D2FF9A612682006C00AFF268 /* MainNewTableViewCell.swift in Sources */,
 				D27CE089267A6AB400D7EC83 /* LikeTableViewCell.swift in Sources */,
 				D2C5AEA42678DF15003B123D /* TabBarViewController.swift in Sources */,
 				D2C5AE9E2678DB4E003B123D /* MyViewController.swift in Sources */,

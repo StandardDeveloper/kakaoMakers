@@ -17,9 +17,11 @@ class MainHomeNewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let nibName = UINib(nibName: "MainNewTableViewCell", bundle: nil)
+        newTableView.register(nibName, forCellReuseIdentifier: "mainTableViewCell")
+        
         newTableView.rowHeight = UITableView.automaticDimension
         newTableView.estimatedRowHeight = 500
-
 
         newTableView.delegate = self
         newTableView.dataSource = self
@@ -30,7 +32,6 @@ class MainHomeNewViewController: UIViewController {
     func getMovieData() {
         
         movieNetworkProvider.getMovies(target: .nowPlaying) { results in
-            
             
             self.movieListVM = MovieListViewModel(nowplaying: results)
             
@@ -54,8 +55,17 @@ extension MainHomeNewViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = newTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MainAllTableViewCell
-       return cell
+       
+        let cell = newTableView.dequeueReusableCell(withIdentifier: "mainTableViewCell", for: indexPath) as! MainNewTableViewCell
+        
+        
+        let movieVM = self.movieListVM.movieAtIndex(indexPath.section, index: indexPath.row)
+        cell.titleLabel.text = movieVM.title
+        cell.infoLabel.text = movieVM.overview
+        cell.oderLabel.text = "\(movieVM.id!)명이 주문했어요"
+        let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
+        cell.posterImageView.kf.setImage(with: URL(string: imagePath))
+        return cell
        
     }
     
