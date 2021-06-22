@@ -17,6 +17,9 @@ class MainHomeAllViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let nibName = UINib(nibName: "MainNewTableViewCell", bundle: nil)
+        mainTableView.register(nibName, forCellReuseIdentifier: "mainTableViewCell")
+        
         mainTableView.rowHeight = UITableView.automaticDimension
         mainTableView.estimatedRowHeight = 500
 
@@ -53,14 +56,14 @@ extension MainHomeAllViewController: UITableViewDelegate, UITableViewDataSource 
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MainAllTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mainTableViewCell", for: indexPath) as! MainHomeTableViewCell
         
         let movieVM = self.movieListVM.movieAtIndex(indexPath.section, index: indexPath.row)
         cell.titleLabel.text = movieVM.title
         cell.infoLabel.text = movieVM.overview
         cell.oderLabel.text = "\(movieVM.id!)명이 주문했어요"
         let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
-        cell.mainImageView.kf.setImage(with: URL(string: imagePath))
+        cell.posterImageView.kf.setImage(with: URL(string: imagePath))
         
         return cell
     }

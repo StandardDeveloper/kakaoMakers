@@ -56,7 +56,7 @@ extension MainHomeNewViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        let cell = newTableView.dequeueReusableCell(withIdentifier: "mainTableViewCell", for: indexPath) as! MainNewTableViewCell
+        let cell = newTableView.dequeueReusableCell(withIdentifier: "mainTableViewCell", for: indexPath) as! MainHomeTableViewCell
         
         
         let movieVM = self.movieListVM.movieAtIndex(indexPath.section, index: indexPath.row)

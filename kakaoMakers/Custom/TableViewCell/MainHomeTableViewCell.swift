@@ -1,5 +1,5 @@
 //
-//  MainAllTableViewCell.swift
+//  MainHomeTableViewCell.swift
 //  kakaoMakers
 //
 //  Created by 이민욱 on 2021/06/22.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class MainAllTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var mainImageView: UIImageView!
+class MainHomeTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var oderLabel: UILabel!
@@ -17,13 +17,13 @@ class MainAllTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+
         configView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        
     }
     
     func configView() {
@@ -33,7 +33,5 @@ class MainAllTableViewCell: UITableViewCell {
         likeBtn.layer.cornerRadius = 5.0
         likeBtn.layer.borderWidth = 1.0
         likeBtn.layer.borderColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1.0).cgColor
-        
     }
-
 }

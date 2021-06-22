@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainTableViewCell" rowHeight="702" id="qBY-Ir-vJR" customClass="MainNewTableViewCell" customModule="kakaoMakers" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainTableViewCell" rowHeight="702" id="qBY-Ir-vJR" customClass="MainHomeTableViewCell" customModule="kakaoMakers" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="413" height="520"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qBY-Ir-vJR" id="tn6-Mu-K6f">
@@ -73,6 +73,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="infoLabel" destination="kbI-qM-lBd" id="VJZ-HL-RUz"/>
+                <outlet property="likeBtn" destination="zXs-aV-jHU" id="jOx-3m-rcJ"/>
                 <outlet property="oderLabel" destination="pcp-4f-L9A" id="t5w-rD-NVW"/>
                 <outlet property="posterImageView" destination="G6n-P6-PBd" id="cHi-eT-zvo"/>
                 <outlet property="titleLabel" destination="jtm-44-olL" id="Fxw-wv-U5T"/>

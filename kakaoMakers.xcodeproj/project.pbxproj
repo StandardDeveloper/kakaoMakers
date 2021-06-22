@@ -26,7 +26,6 @@
 		D28AEEC3267A3CB5008E509E /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28AEEC2267A3CB5008E509E /* CustomUIButton.swift */; };
 		D2C339C42680C26600866069 /* KaKaoCustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C339C32680C26600866069 /* KaKaoCustomUIButton.swift */; };
 		D2C339C62680C7FF00866069 /* LikeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C339C52680C7FF00866069 /* LikeInfoTableViewCell.swift */; };
-		D2C339C82680EF9100866069 /* MainAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C339C72680EF9100866069 /* MainAllTableViewCell.swift */; };
 		D2C5AE832678D75F003B123D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5AE822678D75F003B123D /* AppDelegate.swift */; };
 		D2C5AE852678D75F003B123D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5AE842678D75F003B123D /* SceneDelegate.swift */; };
 		D2C5AE8A2678D75F003B123D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C5AE882678D75F003B123D /* Main.storyboard */; };
@@ -38,7 +37,7 @@
 		D2C5AEA02678DD90003B123D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C5AE9F2678DD90003B123D /* Assets.xcassets */; };
 		D2C5AEA42678DF15003B123D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5AEA32678DF15003B123D /* TabBarViewController.swift */; };
 		D2FF9A5F2681FE3100AFF268 /* MainNewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FF9A5E2681FE3100AFF268 /* MainNewTableViewCell.xib */; };
-		D2FF9A612682006C00AFF268 /* MainNewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF9A602682006C00AFF268 /* MainNewTableViewCell.swift */; };
+		D2FF9A612682006C00AFF268 /* MainHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF9A602682006C00AFF268 /* MainHomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +62,6 @@
 		D28AEEC2267A3CB5008E509E /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
 		D2C339C32680C26600866069 /* KaKaoCustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaKaoCustomUIButton.swift; sourceTree = "<group>"; };
 		D2C339C52680C7FF00866069 /* LikeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeInfoTableViewCell.swift; sourceTree = "<group>"; };
-		D2C339C72680EF9100866069 /* MainAllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAllTableViewCell.swift; sourceTree = "<group>"; };
 		D2C5AE7F2678D75F003B123D /* kakaoMakers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kakaoMakers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C5AE822678D75F003B123D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2C5AE842678D75F003B123D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +75,7 @@
 		D2C5AE9F2678DD90003B123D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2C5AEA32678DF15003B123D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D2FF9A5E2681FE3100AFF268 /* MainNewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainNewTableViewCell.xib; sourceTree = "<group>"; };
-		D2FF9A602682006C00AFF268 /* MainNewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNewTableViewCell.swift; sourceTree = "<group>"; };
+		D2FF9A602682006C00AFF268 /* MainHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +171,7 @@
 				D28AEEC0267A1DBD008E509E /* CommingSoonTableViewCell.swift */,
 				D27CE088267A6AB400D7EC83 /* LikeTableViewCell.swift */,
 				D2C339C52680C7FF00866069 /* LikeInfoTableViewCell.swift */,
-				D2C339C72680EF9100866069 /* MainAllTableViewCell.swift */,
-				D2FF9A602682006C00AFF268 /* MainNewTableViewCell.swift */,
+				D2FF9A602682006C00AFF268 /* MainHomeTableViewCell.swift */,
 				D2FF9A5E2681FE3100AFF268 /* MainNewTableViewCell.xib */,
 			);
 			path = TableViewCell;
@@ -372,14 +369,13 @@
 				D28AEEC1267A1DBD008E509E /* CommingSoonTableViewCell.swift in Sources */,
 				D223FF772679BE210060BD99 /* DetailMovie.swift in Sources */,
 				D2C5AE852678D75F003B123D /* SceneDelegate.swift in Sources */,
-				D2C339C82680EF9100866069 /* MainAllTableViewCell.swift in Sources */,
 				D2C5AE9A2678DB2E003B123D /* SearchViewController.swift in Sources */,
 				D253D392267D9FE7003AB457 /* MainHomeCategoryViewController.swift in Sources */,
 				D28AEEC3267A3CB5008E509E /* CustomUIButton.swift in Sources */,
 				D25985BF2678E91400395A4E /* RecentlyViewController.swift in Sources */,
 				D253D38E267D9FCE003AB457 /* MainHomeAllViewController.swift in Sources */,
 				D25985C32678E98200395A4E /* CommingSoonViewController.swift in Sources */,
-				D2FF9A612682006C00AFF268 /* MainNewTableViewCell.swift in Sources */,
+				D2FF9A612682006C00AFF268 /* MainHomeTableViewCell.swift in Sources */,
 				D27CE089267A6AB400D7EC83 /* LikeTableViewCell.swift in Sources */,
 				D2C5AEA42678DF15003B123D /* TabBarViewController.swift in Sources */,
 				D2C5AE9E2678DB4E003B123D /* MyViewController.swift in Sources */,

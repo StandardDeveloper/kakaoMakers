@@ -14,9 +14,6 @@ class CustomUIButton: UIButton {
         self.layer.cornerRadius = 5.0;
         self.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         self.tintColor = UIColor.lightGray
-        
-        
-    }
 
-   
+    }
 }
