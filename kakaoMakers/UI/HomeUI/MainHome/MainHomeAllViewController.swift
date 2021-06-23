@@ -31,7 +31,7 @@ class MainHomeAllViewController: UIViewController {
     
     func getMovieData() {
         
-        movieNetworkProvider.getMovies(target: .toRated) { results in
+        movieNetworkProvider.getMovies(target: .topRated) { results in
             
             self.movieListVM = MovieTopRated(topRated: results)
             
