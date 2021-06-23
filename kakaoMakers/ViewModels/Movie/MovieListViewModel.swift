@@ -40,4 +40,3 @@ extension MovieViewModel {
         return self.movie.poster_path
     }
 }
-

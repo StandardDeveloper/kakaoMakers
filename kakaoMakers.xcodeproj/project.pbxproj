@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9F2256204AB1918F7A53EC17 /* Pods_kakaoMakers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599FE0DE1BF31CAF577FEFF8 /* Pods_kakaoMakers.framework */; };
+		D216AE232682FA7100826B66 /* MoviePopular.swift in Sources */ = {isa = PBXBuildFile; fileRef = D216AE222682FA7100826B66 /* MoviePopular.swift */; };
+		D216AE2E2683637700826B66 /* RecentlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D216AE2D2683637700826B66 /* RecentlyTableViewCell.swift */; };
 		D223FF702679BDF30060BD99 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223FF6F2679BDF30060BD99 /* MovieAPI.swift */; };
 		D223FF722679BE070060BD99 /* MovieNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223FF712679BE070060BD99 /* MovieNetworkManager.swift */; };
 		D223FF752679BE130060BD99 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223FF742679BE130060BD99 /* Movie.swift */; };
@@ -54,6 +56,8 @@
 		40415D131D234751CA9EF140 /* Pods-kakaoMakers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kakaoMakers.debug.xcconfig"; path = "Target Support Files/Pods-kakaoMakers/Pods-kakaoMakers.debug.xcconfig"; sourceTree = "<group>"; };
 		599FE0DE1BF31CAF577FEFF8 /* Pods_kakaoMakers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kakaoMakers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6139545570FCF62347124ADD /* Pods-kakaoMakers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kakaoMakers.release.xcconfig"; path = "Target Support Files/Pods-kakaoMakers/Pods-kakaoMakers.release.xcconfig"; sourceTree = "<group>"; };
+		D216AE222682FA7100826B66 /* MoviePopular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePopular.swift; sourceTree = "<group>"; };
+		D216AE2D2683637700826B66 /* RecentlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyTableViewCell.swift; sourceTree = "<group>"; };
 		D223FF6F2679BDF30060BD99 /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 		D223FF712679BE070060BD99 /* MovieNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNetworkManager.swift; sourceTree = "<group>"; };
 		D223FF742679BE130060BD99 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -140,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				D2FF9A7A268235D200AFF268 /* Movie */,
-				D2FF9A7B268235E000AFF268 /* TV */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				D2C339C52680C7FF00866069 /* LikeInfoTableViewCell.swift */,
 				D2FF9A602682006C00AFF268 /* MainHomeTableViewCell.swift */,
 				D2FF9A5E2681FE3100AFF268 /* MainNewTableViewCell.xib */,
+				D216AE2D2683637700826B66 /* RecentlyTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -285,15 +289,9 @@
 				D2FF9A762682318800AFF268 /* MovieNowPlaying.swift */,
 				D2FF9A7426822F4C00AFF268 /* MovieUpComming.swift */,
 				D2FF9A78268232C000AFF268 /* MovieTopRated.swift */,
+				D216AE222682FA7100826B66 /* MoviePopular.swift */,
 			);
 			path = Movie;
-			sourceTree = "<group>";
-		};
-		D2FF9A7B268235E000AFF268 /* TV */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TV;
 			sourceTree = "<group>";
 		};
 		E825C612184FF51C326BFAB3 /* Pods */ = {
@@ -439,6 +437,7 @@
 				D2C5AE9A2678DB2E003B123D /* SearchViewController.swift in Sources */,
 				D253D392267D9FE7003AB457 /* MainHomeCategoryViewController.swift in Sources */,
 				D28AEEC3267A3CB5008E509E /* CustomUIButton.swift in Sources */,
+				D216AE232682FA7100826B66 /* MoviePopular.swift in Sources */,
 				D2FF9A722682163100AFF268 /* CategoryCollectionViewCell.swift in Sources */,
 				D25985BF2678E91400395A4E /* RecentlyViewController.swift in Sources */,
 				D253D38E267D9FCE003AB457 /* MainHomeAllViewController.swift in Sources */,
@@ -448,6 +447,7 @@
 				D27CE089267A6AB400D7EC83 /* LikeTableViewCell.swift in Sources */,
 				D2C5AEA42678DF15003B123D /* TabBarViewController.swift in Sources */,
 				D2C5AE9E2678DB4E003B123D /* MyViewController.swift in Sources */,
+				D216AE2E2683637700826B66 /* RecentlyTableViewCell.swift in Sources */,
 				D253D390267D9FDC003AB457 /* MainHomeNewViewController.swift in Sources */,
 				D223FF722679BE070060BD99 /* MovieNetworkManager.swift in Sources */,
 				D2C339C42680C26600866069 /* KaKaoCustomUIButton.swift in Sources */,

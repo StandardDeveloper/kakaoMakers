@@ -21,17 +21,16 @@ struct MovieNetworkManager: MovieNetwork {
     static let MOVIEID = "movie_id"
     
     let provider = MoyaProvider<MovieAPI>()
-   
+    
     func getMovies(target: MovieAPI, completion: @escaping ([Movie]) -> ()) {
         
         provider.request(target) { (results) in
             
             ProgressHUD.show()
-
+            
             switch results {
             case.success(let response):
                 do {
-                    
                     let movieListJson = try? JSONDecoder().decode(MovieList.self, from: response.data)
                     if let movieList = movieListJson {
                         completion(movieList.results)

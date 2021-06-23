@@ -12,8 +12,9 @@ enum MovieAPI {
     case nowPlaying
     case topRated
     case upComing
+    case latest
+    case popular
     case details(id: Int)
-    case images(id: Int)
 }
 
 extension MovieAPI: TargetType {
@@ -32,16 +33,18 @@ extension MovieAPI: TargetType {
             return "/movie/top_rated"
         case .upComing:
             return "/movie/upcoming"
+        case .latest:
+            return "/movie/latest"
+        case .popular:
+            return "/movie/popular"
         case .details(let id):
             return "/movie/\(id)"
-        case .images(let id):
-            return "/movie/\(id)/images"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .nowPlaying, .topRated, .upComing, .details(_), .images(_):
+        case .nowPlaying, .topRated, .upComing, .latest, .popular, .details(_):
             return .get
         }
     }
@@ -53,12 +56,10 @@ extension MovieAPI: TargetType {
     var task: Task {
         
         switch self {
-        case .nowPlaying, .topRated, .upComing:
+        case .nowPlaying, .topRated, .upComing, .latest, .popular:
             return .requestParameters(parameters: ["api_key": MovieNetworkManager.APIKEY], encoding: URLEncoding.queryString)
         case .details(let id):
             return .requestParameters(parameters: ["api_key":MovieNetworkManager.APIKEY, MovieNetworkManager.MOVIEID:id], encoding: URLEncoding.queryString)
-        case .images(let id):
-            return .requestParameters(parameters: ["api_key":MovieNetworkManager.APIKEY], encoding: URLEncoding.queryString)
         }
     }
     

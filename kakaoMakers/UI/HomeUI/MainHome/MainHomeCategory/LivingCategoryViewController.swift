@@ -12,7 +12,7 @@ class LivingCategoryViewController: UIViewController {
     @IBOutlet weak var livingCollectionView: UICollectionView!
     
     var movieNetworkProvider = MovieNetworkManager()
-    private var movieListVM: MovieTopRated!
+    private var movieListVM: MovieUpComming!
     
     let lineSpacing: CGFloat = 5
     let inset: CGFloat = 0
@@ -32,9 +32,9 @@ class LivingCategoryViewController: UIViewController {
     
     func getMovieData() {
         
-        movieNetworkProvider.getMovies(target: .topRated) { results in
+        movieNetworkProvider.getMovies(target: .upComing) { results in
             
-            self.movieListVM = MovieTopRated(topRated: results)
+            self.movieListVM = MovieUpComming(upComming: results)
             
             OperationQueue.main.addOperation {
                 self.livingCollectionView.reloadData()

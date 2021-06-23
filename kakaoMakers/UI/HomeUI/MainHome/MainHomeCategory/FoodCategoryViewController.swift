@@ -12,7 +12,7 @@ class FoodCategoryViewController: UIViewController {
     @IBOutlet weak var foodCollectionView: UICollectionView!
     
     var movieNetworkProvider = MovieNetworkManager()
-    private var movieListVM: MovieTopRated!
+    private var movieListVM: MoviePopular!
     
     let lineSpacing: CGFloat = 5
     let inset: CGFloat = 0
@@ -32,10 +32,10 @@ class FoodCategoryViewController: UIViewController {
     
     func getMovieData() {
         
-        movieNetworkProvider.getMovies(target: .topRated) { results in
+        movieNetworkProvider.getMovies(target: .popular) { results in
             
-            self.movieListVM = MovieTopRated(topRated: results)
-            
+            self.movieListVM = MoviePopular(popular: results)
+                
             OperationQueue.main.addOperation {
                 self.foodCollectionView.reloadData()
             }

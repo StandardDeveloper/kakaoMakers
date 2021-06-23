@@ -12,7 +12,7 @@ class FashionCategoryViewController: UIViewController {
     @IBOutlet weak var fashionCollectionView: UICollectionView!
     
     var movieNetworkProvider = MovieNetworkManager()
-    private var movieListVM: MovieTopRated!
+    private var movieListVM: MovieNowPlaying!
     
     let lineSpacing: CGFloat = 5
     let inset: CGFloat = 0
@@ -32,9 +32,9 @@ class FashionCategoryViewController: UIViewController {
     
     func getMovieData() {
         
-        movieNetworkProvider.getMovies(target: .topRated) { results in
+        movieNetworkProvider.getMovies(target: .nowPlaying) { results in
             
-            self.movieListVM = MovieTopRated(topRated: results)
+            self.movieListVM = MovieNowPlaying(nowPlaying: results)
             
             OperationQueue.main.addOperation {
                 self.fashionCollectionView.reloadData()

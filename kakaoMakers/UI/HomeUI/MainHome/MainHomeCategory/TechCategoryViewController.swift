@@ -12,7 +12,7 @@ class TechCategoryViewController: UIViewController {
     @IBOutlet weak var techCollectionView: UICollectionView!
     
     var movieNetworkProvider = MovieNetworkManager()
-    private var movieListVM: MovieTopRated!
+    private var movieListVM: MoviePopular!
     
     let lineSpacing: CGFloat = 5
     let inset: CGFloat = 0
@@ -32,9 +32,9 @@ class TechCategoryViewController: UIViewController {
     
     func getMovieData() {
         
-        movieNetworkProvider.getMovies(target: .topRated) { results in
+        movieNetworkProvider.getMovies(target: .popular) { results in
             
-            self.movieListVM = MovieTopRated(topRated: results)
+            self.movieListVM = MoviePopular(popular: results)
             
             OperationQueue.main.addOperation {
                 self.techCollectionView.reloadData()

@@ -29,13 +29,14 @@ class BeautyCategoryViewController: UIViewController {
         
         getMovieData()
     }
-    
+  
+
     func getMovieData() {
-        
+
         movieNetworkProvider.getMovies(target: .topRated) { results in
-            
+
             self.movieListVM = MovieTopRated(topRated: results)
-            
+
             OperationQueue.main.addOperation {
                 self.beautyCollectionView.reloadData()
             }
