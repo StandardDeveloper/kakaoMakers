@@ -9,10 +9,12 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var movieId: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print("++++++++++++++", movieId)
     }
     
 

@@ -8,12 +8,13 @@
 import UIKit
 
 class MainHomeAllViewController: UIViewController {
-
+    
     @IBOutlet weak var mainTableView: UITableView!
-
+    
     var movieNetworkProvider = MovieNetworkManager()
     private var movieListVM: MovieTopRated!
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +23,7 @@ class MainHomeAllViewController: UIViewController {
         
         mainTableView.rowHeight = UITableView.automaticDimension
         mainTableView.estimatedRowHeight = 500
-
+        
         mainTableView.delegate = self
         mainTableView.dataSource = self
         
@@ -39,13 +40,26 @@ class MainHomeAllViewController: UIViewController {
                 self.mainTableView.reloadData()
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toDetail" {
+            if let vc = segue.destination as? DetailViewController {
+                
+                let indexPath = self.mainTableView.indexPathForSelectedRow
+                vc.movieId = movieListVM.movieAtIndex(indexPath!.section, index: indexPath!.row).id!//nowPlaying[indexPath!.row].id
+                
+                print("++++++++++++++++", vc.movieId)
+            }
+        }
         
     }
     
 }
 
 extension MainHomeAllViewController: UITableViewDelegate, UITableViewDataSource {
-  
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.movieListVM == nil ? 0 : self.movieListVM.numberOfSections
     }
@@ -66,4 +80,12 @@ extension MainHomeAllViewController: UITableViewDelegate, UITableViewDataSource 
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("TTTTTTTT", indexPath.row)
+        self.performSegue(withIdentifier: "toDetail", sender: indexPath)
+        
+    }
+    
 }

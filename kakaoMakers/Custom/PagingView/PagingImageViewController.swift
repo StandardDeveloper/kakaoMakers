@@ -7,23 +7,21 @@
 
 import UIKit
 
+//delegeate가 없어서 커스텀으로 클래스 제작
+protocol PagingImageViewControllerDelegate: AnyObject {
+    func setupPageController(numberOfPages: Int)
+    func turnPageController(to index: Int)
+}
+
 class PagingImageViewController: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+     
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

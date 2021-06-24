@@ -74,7 +74,7 @@ extension HomeViewController: PageboyViewControllerDataSource, TMBarDataSource {
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
         
         //시작 페이지 설정
-        scrollToPage(.at(index: 2), animated: true, completion: nil)
+        scrollToPage(.at(index: 1), animated: true, completion: nil)
         
         let item = TMBarItem(title: "")
        
