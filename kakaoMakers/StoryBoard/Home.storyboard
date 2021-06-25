@@ -410,7 +410,7 @@
                                         <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfN-bc-O61">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
                                             <connections>
-                                                <segue destination="dZV-Tm-5st" kind="embed" id="8XQ-4U-g8H"/>
+                                                <segue destination="dZV-Tm-5st" kind="embed" identifier="toDetailImage" id="8XQ-4U-g8H"/>
                                             </connections>
                                         </containerView>
                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="1XJ-l9-r8k">
@@ -431,7 +431,7 @@
                                     </connections>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="ul3-f1-hcb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" rowHeight="100" id="ul3-f1-hcb" customClass="DetailTableViewCell" customModule="kakaoMakers" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="374.5" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ul3-f1-hcb" id="B9y-bl-SvV">
@@ -481,6 +481,12 @@
                                                 <constraint firstItem="WB1-Nn-HaX" firstAttribute="top" secondItem="yNe-Aj-CSH" secondAttribute="bottom" constant="5" id="zZh-Fx-XE4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="heartBtn" destination="0a9-CB-5h1" id="1PO-bX-dEv"/>
+                                            <outlet property="infoLabel" destination="x7R-Rp-svC" id="PR4-ob-16L"/>
+                                            <outlet property="priceLabel" destination="WB1-Nn-HaX" id="49i-8H-6F4"/>
+                                            <outlet property="titleLabel" destination="yNe-Aj-CSH" id="5Eo-ds-J3z"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -495,10 +501,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AwK-yG-dcr"/>
+                    <connections>
+                        <outlet property="detailTableView" destination="Ivv-xW-3Gs" id="wyO-WI-SU3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSR-qs-g1b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7240.579710144928" y="750"/>
+            <point key="canvasLocation" x="8290" y="750"/>
         </scene>
         <!--Main Home Category View Controller-->
         <scene sceneID="bLM-Eb-qty">
@@ -1159,7 +1168,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="dZV-Tm-5st" customClass="PagingImageViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTc-GO-Yrd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8133" y="750"/>
+            <point key="canvasLocation" x="9154" y="750"/>
         </scene>
         <!--Detail Image View Controller-->
         <scene sceneID="DBX-c9-blP">
@@ -1182,10 +1191,13 @@
                             <constraint firstItem="0Ss-Q5-8Nu" firstAttribute="bottom" secondItem="CVw-eX-8ZW" secondAttribute="bottom" id="WU0-jV-6Lx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="CVw-eX-8ZW" id="xS7-4F-zMs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uub-Vy-Xye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8971" y="750"/>
+            <point key="canvasLocation" x="9977" y="750"/>
         </scene>
     </scenes>
     <resources>

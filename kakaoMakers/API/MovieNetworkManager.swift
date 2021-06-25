@@ -61,11 +61,13 @@ struct MovieNetworkManager: MovieNetwork {
             case.success(let response):
                 
                 do{
-                    let result: DetailMovie = try JSONDecoder().decode(DetailMovie.self, from: response.data)
-                    ProgressHUD.dismiss()
-                    completion(result)
+                    let detailMovieJson = try? JSONDecoder().decode(DetailMovie.self, from: response.data)
                     
-                    print(movieID)
+                    if let detailMovie = detailMovieJson {
+                        completion(detailMovie)
+                        print("***************", detailMovie)
+                        ProgressHUD.dismiss()
+                    }
                 }
                 catch let err{
                     ProgressHUD.dismiss()
@@ -78,7 +80,33 @@ struct MovieNetworkManager: MovieNetwork {
                 break
             }
         }
-        
     }
     
+//    func getDetailMovie(movieID: Int, completion: @escaping(DetailMovie) -> ()) {
+//
+//        provider.request(.details(id: movieID)) { (results) in
+//
+//            switch results {
+//
+//            case.success(let response):
+//
+//                do{
+//                    let result: DetailMovie = try JSONDecoder().decode(DetailMovie.self, from: response.data)
+//                    ProgressHUD.dismiss()
+//                    completion(result)
+//
+//                    print(movieID)
+//                }
+//                catch let err{
+//                    ProgressHUD.dismiss()
+//                    print(err)
+//                }
+//
+//            case.failure(let err):
+//                ProgressHUD.dismiss()
+//                print(err)
+//                break
+//            }
+//        }
+//    }
 }

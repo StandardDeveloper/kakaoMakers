@@ -15,10 +15,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="413" height="520"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G6n-P6-PBd">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G6n-P6-PBd">
                         <rect key="frame" x="0.0" y="0.0" width="413" height="300"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="300" id="7lJ-MX-ThP"/>
+                            <constraint firstAttribute="width" constant="413" id="edZ-nw-ven"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dh9-0U-jFN">
