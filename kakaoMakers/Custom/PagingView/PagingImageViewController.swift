@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 //delegeate가 없어서 커스텀으로 클래스 제작
 protocol PagingImageViewControllerDelegate: AnyObject {
@@ -17,21 +18,24 @@ class PagingImageViewController: UIPageViewController {
 
     var movieIndex: Int = 0
     var networkProvider = MovieNetworkManager()
-    var images: [UIImage]?
-    //var URLImage = [UIImage]()
+
+    var movieImages = [MovieImage]()
+//    movieimages.
+    var images: [UIImage]? = Product.fetchProducts().first!.images
     weak var pageViewControllerDelegate: PagingImageViewControllerDelegate?
     
     struct Storyboard {
-        static let pagingImageViewController = "PagingImageViewController"
+        static let pagingImageViewController = "detailIimageView"
     }
     
+
     lazy var controllers: [UIViewController] = {
         
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         var controllers = [UIViewController]()
                 
-        if let images = self.images {
-            for image in images {
+        if let images = images {
+        for image in images {
                 let productImageVC = storyboard.instantiateViewController(withIdentifier: Storyboard.pagingImageViewController)
                     controllers.append(productImageVC)
                 }
@@ -44,29 +48,28 @@ class PagingImageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        print("dddd", Product.fetchProducts().first?.images)
 
         automaticallyAdjustsScrollViewInsets = false
         dataSource = self
         delegate = self
         
         print("-------------", movieIndex)
-        getDetailMovie()
+        getMovieImages()
+        
+        turnToPage(index: 0)
      
+   
     }
     
-    func getDetailMovie() {
-        
-//        networkProvider.getDetailMovie(movieID: movieIndex) { [self] results in
-//
-//            let posterImagePathURL = URL(string: "https://image.tmdb.org/t/p/w500\(results.poster_path)")
-//            let PosterData = try! Data(contentsOf: posterImagePathURL!)
-//            images?.append(UIImage(data: PosterData)!)
-//
-//            let backImagePathURL = URL(string: "https://image.tmdb.org/t/p/w500\(results.backdrop_path)")
-//            let backdropData = try! Data(contentsOf: backImagePathURL!)
-//            images?.append(UIImage(data: backdropData)!)
-//
-//        }
+    func getMovieImages() {
+        networkProvider.getMovieImages(movieID: movieIndex) { results in
+            
+            self.movieImages = results
+            print("_______________", self.movieImages)
+        }
     }
     
     func turnToPage(index: Int) {
@@ -75,7 +78,7 @@ class PagingImageViewController: UIPageViewController {
         var direction = UIPageViewController.NavigationDirection.forward
         
         if let currentVC = viewControllers?.first {
-            let currentIndex = controllers.firstIndex(of: currentVC)!
+            let currentIndex = controllers.index(of: currentVC)!
             if (currentIndex > index) {
                 direction = .reverse
             }
@@ -84,8 +87,8 @@ class PagingImageViewController: UIPageViewController {
         self.configureDisplaying(viewController: controller)
         
         setViewControllers([controller], direction: direction, animated: true, completion: nil)
+        
     }
-    
     func configureDisplaying(viewController: UIViewController)
         {
             for (index, vc) in controllers.enumerated() {

@@ -82,6 +82,37 @@ struct MovieNetworkManager: MovieNetwork {
         }
     }
     
+    func getMovieImages(movieID: Int, completion: @escaping ([MovieImage]) -> ()) {
+        
+        provider.request(.image(id: movieID)) { (results) in
+            
+            ProgressHUD.show()
+            
+            switch results {
+            case.success(let response):
+                do {
+                    let movieImageListJson = try? JSONDecoder().decode(MovieImageList.self, from: response.data)
+                    //print("dddd", movieImageListJson!)
+                    completion(movieImageListJson!.backdrops)
+                    ProgressHUD.dismiss()
+                    
+                }
+                catch let err {
+                    print(err)
+                    ProgressHUD.dismiss()
+                }
+                
+            case.failure(let err):
+                print(err)
+                ProgressHUD.dismiss()
+                break
+                
+            }
+        }
+    }
+    
+    
+    
 //    func getDetailMovie(movieID: Int, completion: @escaping(DetailMovie) -> ()) {
 //
 //        provider.request(.details(id: movieID)) { (results) in

@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
 
     var networkProvider = MovieNetworkManager()
     private var movieListVM: MovieNowPlaying!
+    let searchController = UISearchController(searchResultsController: nil)
 
     let lineSpacing: CGFloat = 5
     let inset: CGFloat = 0
@@ -22,13 +23,18 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        searchController.searchBar.placeholder = "어떤 제품을 찾으시나요?"
+        navigationItem.title = "검색"
+        navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        
         searchCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         searchCollectionView.delegate = self
         searchCollectionView.dataSource = self
 
         let nibName = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
         searchCollectionView.register(nibName, forCellWithReuseIdentifier: "categoryCollectionViewCell")
-
+        
         getMovieData()
     }
 
@@ -45,6 +51,12 @@ class SearchViewController: UIViewController {
     }
 }
 
+extension SearchViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+}
+
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -53,11 +65,6 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         headerview.titleLabel.text = "금주 상품"
         return headerview
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        return CGSize(width: 100, height: 100)
-//    }
-//
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.movieListVM == nil ? 0 : self.movieListVM.numberOfSections
