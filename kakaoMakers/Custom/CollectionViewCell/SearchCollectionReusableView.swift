@@ -8,6 +8,7 @@
 import UIKit
 
 class SearchCollectionReusableView: UICollectionReusableView {
+   
     @IBOutlet weak var titleLabel: UILabel!
     
 }
