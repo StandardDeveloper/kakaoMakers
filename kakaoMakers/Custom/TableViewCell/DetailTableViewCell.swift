@@ -15,7 +15,7 @@ class DetailTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configBtn()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,5 +23,13 @@ class DetailTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func configBtn() {
+        heartBtn.layer.cornerRadius = heartBtn.layer.frame.size.width / 2
+        heartBtn.layer.borderWidth = 1
+        heartBtn.layer.borderColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1.0).cgColor
+        let heart : UIImage = UIImage(named:"heart")!
+        heartBtn.imageEdgeInsets = UIEdgeInsets(top: 35, left: 35, bottom: 35, right: 35)
+        heartBtn.setImage(heart, for: UIControl.State.normal)
+    }
 }

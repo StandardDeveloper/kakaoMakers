@@ -71,15 +71,15 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = detailTableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! DetailTableViewCell
     
         if indexPath.section == 0 {
-            
             cell.titleLabel.text = detailMove?.title
-            return cell
+            cell.priceLabel.text = detailMove?.release_date
             
+            if (detailMove?.runtime) != nil {
+                cell.infoLabel.text = "\(detailMove!.runtime)"
+            }
+            return cell
         }
         
-        //let detailMovieVM = self.detailMovieListVM.movieAtIndex(indexPath.section, index: indexPath.row)
-        //cell.titleLabel.text = detailMovieVM.title
-        //cell.infoLabel.text = detailMovieVM.release_data
         return cell
     }
     
