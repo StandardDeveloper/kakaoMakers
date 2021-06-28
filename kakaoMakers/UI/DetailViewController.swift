@@ -44,9 +44,7 @@ class DetailViewController: UIViewController {
         
         networkProvider.getDetailMovie(movieID: movieId) { result in
             
-            
             self.detailMove = result
-            
             
             print("///////", result)
            // self.detailMovieListVM = DetailMovieInfo(detailMovieInfo: results)
@@ -66,7 +64,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1//self.detailMovieListVM.numberOfRowInSections(section)
+        return 1//self.detailMovieLx`istVM.numberOfRowInSections(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

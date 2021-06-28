@@ -14,8 +14,6 @@
 		D212806F2685788000EF3178 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D212806E2685788000EF3178 /* DetailTableViewCell.swift */; };
 		D21280722685942C00EF3178 /* DetailMovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21280712685942C00EF3178 /* DetailMovieListViewModel.swift */; };
 		D21280762685945000EF3178 /* DetailMovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21280752685945000EF3178 /* DetailMovieInfo.swift */; };
-		D212807B26860F5700EF3178 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D212807926860F5700EF3178 /* DetailCollectionViewCell.swift */; };
-		D212807C26860F5700EF3178 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D212807A26860F5700EF3178 /* DetailCollectionViewCell.xib */; };
 		D212807E268618C900EF3178 /* SearchCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D212807D268618C900EF3178 /* SearchCollectionReusableView.swift */; };
 		D216AE232682FA7100826B66 /* MoviePopular.swift in Sources */ = {isa = PBXBuildFile; fileRef = D216AE222682FA7100826B66 /* MoviePopular.swift */; };
 		D216AE2E2683637700826B66 /* RecentlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D216AE2D2683637700826B66 /* RecentlyTableViewCell.swift */; };
@@ -75,8 +73,6 @@
 		D212806E2685788000EF3178 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		D21280712685942C00EF3178 /* DetailMovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieListViewModel.swift; sourceTree = "<group>"; };
 		D21280752685945000EF3178 /* DetailMovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieInfo.swift; sourceTree = "<group>"; };
-		D212807926860F5700EF3178 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
-		D212807A26860F5700EF3178 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		D212807D268618C900EF3178 /* SearchCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionReusableView.swift; sourceTree = "<group>"; };
 		D216AE222682FA7100826B66 /* MoviePopular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePopular.swift; sourceTree = "<group>"; };
 		D216AE2D2683637700826B66 /* RecentlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyTableViewCell.swift; sourceTree = "<group>"; };
@@ -330,8 +326,6 @@
 			children = (
 				D2FF9A702682163100AFF268 /* CategoryCollectionViewCell.swift */,
 				D2FF9A712682163100AFF268 /* CategoryCollectionViewCell.xib */,
-				D212807926860F5700EF3178 /* DetailCollectionViewCell.swift */,
-				D212807A26860F5700EF3178 /* DetailCollectionViewCell.xib */,
 				D212807D268618C900EF3178 /* SearchCollectionReusableView.swift */,
 			);
 			path = CollectionViewCell;
@@ -418,7 +412,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2FF9A732682163100AFF268 /* CategoryCollectionViewCell.xib in Resources */,
-				D212807C26860F5700EF3178 /* DetailCollectionViewCell.xib in Resources */,
 				D2C5AE8F2678D760003B123D /* LaunchScreen.storyboard in Resources */,
 				D2FF9A5F2681FE3100AFF268 /* MainNewTableViewCell.xib in Resources */,
 				D2C5AEA02678DD90003B123D /* Assets.xcassets in Resources */,
@@ -487,7 +480,6 @@
 				D2C5AE832678D75F003B123D /* AppDelegate.swift in Sources */,
 				D223FF702679BDF30060BD99 /* MovieAPI.swift in Sources */,
 				D212806B2684CE1000EF3178 /* PagingImageViewController.swift in Sources */,
-				D212807B26860F5700EF3178 /* DetailCollectionViewCell.swift in Sources */,
 				D28AEEC1267A1DBD008E509E /* CommingSoonTableViewCell.swift in Sources */,
 				D223FF772679BE210060BD99 /* DetailMovie.swift in Sources */,
 				D2FF9A6C26820C6B00AFF268 /* FashionCategoryViewController.swift in Sources */,
