@@ -34,4 +34,8 @@ class MainHomeTableViewCell: UITableViewCell {
         likeBtn.layer.borderWidth = 1.0
         likeBtn.layer.borderColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1.0).cgColor
     }
+    
+    @IBAction func likeBtnAction(_ sender: Any) {
+        
+    }
 }

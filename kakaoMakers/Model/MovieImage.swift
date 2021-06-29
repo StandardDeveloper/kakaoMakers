@@ -11,7 +11,6 @@ struct MovieImageList: Decodable {
     let backdrops: [MovieImage]
 }
 
-
 struct MovieImage: Decodable {
 
     var file_path: String

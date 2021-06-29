@@ -58,6 +58,9 @@
                         <state key="normal" title="345 명" image="heart" catalog="system">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
+                        <connections>
+                            <action selector="likeBtnAction:" destination="qBY-Ir-vJR" eventType="touchUpInside" id="sYQ-sP-Ffn"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

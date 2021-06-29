@@ -82,10 +82,7 @@ extension MainHomeAllViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        print("TTTTTTTT", indexPath.row)
         self.performSegue(withIdentifier: "toDetail", sender: indexPath)
-        
     }
     
 }

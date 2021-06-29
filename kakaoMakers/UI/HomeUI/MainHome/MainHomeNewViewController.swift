@@ -29,8 +29,8 @@ class MainHomeNewViewController: UIViewController {
         newTableView.dataSource = self
         
         getMovieData()
+        
     }
-    
     
     func getMovieData() {
         
@@ -44,6 +44,19 @@ class MainHomeNewViewController: UIViewController {
             
             OperationQueue.main.addOperation {
                 self.newTableView.reloadData()
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toDetail" {
+            if let vc = segue.destination as? DetailViewController {
+                
+                let indexPath = self.newTableView.indexPathForSelectedRow
+                vc.movieId = movieListVM.movieAtIndex(indexPath!.section, index: indexPath!.row).id!//nowPlaying[indexPath!.row].id
+                
+                print("++++++++++++++++", vc.movieId)
             }
         }
         
@@ -73,5 +86,7 @@ extension MainHomeNewViewController: UITableViewDelegate, UITableViewDataSource 
        
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "toDetail", sender: indexPath)
+    }
 }

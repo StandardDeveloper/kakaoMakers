@@ -335,7 +335,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i9m-oh-rOD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="DUR-nU-vRd">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
@@ -383,20 +383,22 @@
                             <constraint firstItem="i9m-oh-rOD" firstAttribute="leading" secondItem="Mch-rr-JSf" secondAttribute="leading" id="Spe-bI-2Iz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="DQe-AM-ayV"/>
                     <connections>
                         <outlet property="detailLabel" destination="J9k-ct-o7x" id="T7G-jP-WcB"/>
                         <outlet property="newTableView" destination="i9m-oh-rOD" id="Ekg-vz-K9j"/>
                         <outlet property="weekLabel" destination="jXK-Cz-NMT" id="mWV-rQ-udW"/>
+                        <segue destination="z9O-GG-age" kind="show" identifier="toDetail" id="Wbo-zO-SjY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2MH-Na-fjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6023.188405797102" y="750"/>
+            <point key="canvasLocation" x="6933.3333333333339" y="750"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="cik-HD-Kz7">
             <objects>
-                <viewController id="z9O-GG-age" customClass="DetailViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailVC" id="z9O-GG-age" customClass="DetailViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M9M-29-Cre">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -498,7 +500,7 @@
                                             <outlet property="titleLabel" destination="yNe-Aj-CSH" id="5Eo-ds-J3z"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="123" id="9ox-da-9jc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailInfo" rowHeight="123" id="9ox-da-9jc" customClass="DetailInfoTableViewCell" customModule="kakaoMakers" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="474.5" width="414" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9ox-da-9jc" id="gZQ-Ve-5GZ">
@@ -523,12 +525,12 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ki-ah-qt5">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ki-ah-qt5">
                                                             <rect key="frame" x="0.0" y="75" width="394" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="18" id="DgK-tB-nb5"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -542,8 +544,13 @@
                                                 <constraint firstItem="BIF-FZ-4T8" firstAttribute="leading" secondItem="gZQ-Ve-5GZ" secondAttribute="leading" constant="10" id="vKc-De-BHi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailInfoLabel" destination="0Ki-ah-qt5" id="ueQ-sB-vVK"/>
+                                            <outlet property="infoLabel" destination="OP6-n6-7m3" id="fUh-lu-MgY"/>
+                                            <outlet property="titleLabel" destination="ap2-TP-Ho7" id="hrO-IT-ouF"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="EN5-O5-lwf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailOverview" rowHeight="80" id="EN5-O5-lwf" customClass="DetailOverviewTableViewCell" customModule="kakaoMakers" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="597.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EN5-O5-lwf" id="Jzk-KE-eer">
@@ -553,13 +560,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wxw-Z0-W6f">
                                                     <rect key="frame" x="10" y="10" width="394" height="60"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRF-s2-tvB">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRF-s2-tvB">
                                                             <rect key="frame" x="0.0" y="0.0" width="394" height="31.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dff-Lt-5e9">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dff-Lt-5e9">
                                                             <rect key="frame" x="0.0" y="39.5" width="394" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -575,6 +582,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="wxw-Z0-W6f" secondAttribute="bottom" constant="10" id="jVd-UA-X3N"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="overviewLabel" destination="dff-Lt-5e9" id="1P9-yZ-jRj"/>
+                                            <outlet property="titleLabel" destination="zRF-s2-tvB" id="U7h-BK-UtE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -595,7 +606,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSR-qs-g1b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8288.4057971014499" y="750"/>
+            <point key="canvasLocation" x="9198.5507246376819" y="750"/>
         </scene>
         <!--Main Home Category View Controller-->
         <scene sceneID="bLM-Eb-qty">
@@ -1241,7 +1252,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="dZV-Tm-5st" customClass="PagingImageViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTc-GO-Yrd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9154" y="750"/>
+            <point key="canvasLocation" x="10063.76811594203" y="750"/>
         </scene>
         <!--Detail Image View Controller-->
         <scene sceneID="DBX-c9-blP">
@@ -1270,9 +1281,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uub-Vy-Xye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9977" y="750"/>
+            <point key="canvasLocation" x="10886.956521739132" y="750"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dpP-yO-zde">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7sT-WD-JeJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5cD-Hn-KcE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1HN-6K-xk9" kind="relationship" relationship="rootViewController" id="Asx-Ir-2gQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOt-lH-Dy9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6023.188405797102" y="750"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nH4-10-PWo"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="btn_bell" width="24" height="24"/>
         <image name="heart" width="64" height="64"/>

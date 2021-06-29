@@ -14,7 +14,7 @@ struct DetailMovieInfo {
 //테이블뷰에 들어가는 데이터
 extension DetailMovieInfo {
     var numberOfSections: Int {
-        return 1
+        return 3
     }
     
     func numberOfRowInSections(_ section: Int) -> Int {

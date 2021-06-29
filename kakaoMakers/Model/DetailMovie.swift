@@ -21,6 +21,8 @@ struct DetailMovie: Decodable {
     var vote_count: Int
     var release_date: String
     var runtime: Int
+    var homepage: String
+    var id: Int
 }
 
 
