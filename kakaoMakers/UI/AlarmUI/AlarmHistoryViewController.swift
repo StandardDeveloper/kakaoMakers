@@ -9,21 +9,56 @@ import UIKit
 
 class AlarmHistoryViewController: UIViewController {
 
+    @IBOutlet weak var alarmHistoryTableView: UITableView!
+    
+    var networkProvider = MovieNetworkManager()
+    private var movieListVM: MovieNowPlaying!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        alarmHistoryTableView.rowHeight = UITableView.automaticDimension
+        alarmHistoryTableView.estimatedRowHeight = 150
 
-        // Do any additional setup after loading the view.
+        alarmHistoryTableView.delegate = self
+        alarmHistoryTableView.dataSource = self
+        
+        getMovieData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getMovieData() {
+        networkProvider.getMovies(target: .nowPlaying) { results in
+            self.movieListVM = MovieNowPlaying(nowPlaying: results)
+            OperationQueue.main.addOperation {
+                self.alarmHistoryTableView.reloadData()
+            }
+        }
     }
-    */
+    
+}
 
+extension AlarmHistoryViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return movieListVM == nil ? 0 : movieListVM.numberOfSections
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("+++++++++++", section)
+        return movieListVM.numberOfRowInSections(section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = alarmHistoryTableView.dequeueReusableCell(withIdentifier: "alarmHistoryCell", for: indexPath) as! AlarmHistoryTableViewCell
+        let movieVM = self.movieListVM.movieAtIndex(indexPath.section, index: indexPath.row)
+        
+        cell.titleLabel.text = movieVM.title
+        cell.infoLabel.text = movieVM.overview
+        cell.dateLabel.text = movieVM.release_data
+        let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
+        cell.historyImageView.kf.setImage(with: URL(string: imagePath))
+        return cell
+    }
+    
+    
 }

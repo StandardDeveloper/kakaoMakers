@@ -17,6 +17,15 @@ class AlarmViewController: TabmanViewController {
         super.viewDidLoad()
 
         viewSetup()
+        navigationSetup()
+    }
+    
+    func navigationSetup() {
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "알람"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
+        navigationController?.navigationBar.barTintColor = .white
     }
     
     func viewSetup() {
@@ -34,7 +43,7 @@ class AlarmViewController: TabmanViewController {
         bar.largeContentTitle = "알림"
         bar.tintColor = .black
         //bar.layout.layoutGuide
-        bar.layout.contentInset = UIEdgeInsets(top: 50, left: 10, bottom: 0, right: 10)
+        bar.layout.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         bar.layout.interButtonSpacing = 10
         bar.layout.transitionStyle = .snap
         bar.layout.contentMode = .intrinsic
