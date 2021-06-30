@@ -65,22 +65,6 @@
             </objects>
             <point key="canvasLocation" x="2652.1739130434785" y="75"/>
         </scene>
-        <!--Alarm View Controller-->
-        <scene sceneID="A8W-Kb-Hgf">
-            <objects>
-                <viewController id="QjO-F9-ymf" customClass="AlarmViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ULj-DZ-L12">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="fl4-vy-nLe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="bell" catalog="system" id="n6j-Rs-e0M"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TUF-T4-dSX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3334.7826086956525" y="75"/>
-        </scene>
         <!--My View Controller-->
         <scene sceneID="Vxu-ir-dyI">
             <objects>
@@ -110,7 +94,7 @@
                     <connections>
                         <segue destination="xGs-Be-ASh" kind="relationship" relationship="viewControllers" id="Dnb-fa-uib"/>
                         <segue destination="XdW-cv-b7g" kind="relationship" relationship="viewControllers" id="AL1-KU-s3Z"/>
-                        <segue destination="QjO-F9-ymf" kind="relationship" relationship="viewControllers" id="DcU-AR-lDK"/>
+                        <segue destination="hIL-ES-sB5" kind="relationship" relationship="viewControllers" id="DcU-AR-lDK"/>
                         <segue destination="1sY-D8-A66" kind="relationship" relationship="viewControllers" id="ltQ-SM-ne9"/>
                     </connections>
                 </tabBarController>
@@ -147,9 +131,18 @@
             </objects>
             <point key="canvasLocation" x="1742.0289855072465" y="75"/>
         </scene>
+        <!--Alarm-->
+        <scene sceneID="G6v-RL-vPr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Alarm" id="hIL-ES-sB5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="QKE-vf-1xq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YmY-4X-pfG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3334.7826086956525" y="75"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="bell" catalog="system" width="128" height="124"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">

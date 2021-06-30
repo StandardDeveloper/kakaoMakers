@@ -23,6 +23,9 @@
 		D223FF752679BE130060BD99 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223FF742679BE130060BD99 /* Movie.swift */; };
 		D223FF772679BE210060BD99 /* DetailMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223FF762679BE210060BD99 /* DetailMovie.swift */; };
 		D23CE8FE268B4A1D00C459C0 /* HeartBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23CE8FD268B4A1D00C459C0 /* HeartBtn.swift */; };
+		D23CE909268CA77900C459C0 /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D23CE907268CA77900C459C0 /* Alarm.storyboard */; };
+		D23CE90C268CA7D200C459C0 /* AlarmHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23CE90B268CA7D200C459C0 /* AlarmHistoryViewController.swift */; };
+		D23CE90E268CA7DD00C459C0 /* AlarmNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23CE90D268CA7DD00C459C0 /* AlarmNoticeViewController.swift */; };
 		D24E77B2268A358D00795ED1 /* DetailInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E77B1268A358D00795ED1 /* DetailInfoTableViewCell.swift */; };
 		D24E77B4268A35A000795ED1 /* DetailOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E77B3268A35A000795ED1 /* DetailOverviewTableViewCell.swift */; };
 		D25334A62686C9CE0031FFD2 /* MovieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25334A52686C9CE0031FFD2 /* MovieImage.swift */; };
@@ -85,6 +88,9 @@
 		D223FF742679BE130060BD99 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		D223FF762679BE210060BD99 /* DetailMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovie.swift; sourceTree = "<group>"; };
 		D23CE8FD268B4A1D00C459C0 /* HeartBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBtn.swift; sourceTree = "<group>"; };
+		D23CE908268CA77900C459C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Alarm.storyboard; sourceTree = "<group>"; };
+		D23CE90B268CA7D200C459C0 /* AlarmHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmHistoryViewController.swift; sourceTree = "<group>"; };
+		D23CE90D268CA7DD00C459C0 /* AlarmNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmNoticeViewController.swift; sourceTree = "<group>"; };
 		D24E77B1268A358D00795ED1 /* DetailInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoTableViewCell.swift; sourceTree = "<group>"; };
 		D24E77B3268A35A000795ED1 /* DetailOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		D25334A52686C9CE0031FFD2 /* MovieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImage.swift; sourceTree = "<group>"; };
@@ -190,6 +196,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D23CE90A268CA7B000C459C0 /* AlarmUI */ = {
+			isa = PBXGroup;
+			children = (
+				D2C5AE9B2678DB3D003B123D /* AlarmViewController.swift */,
+				D23CE90B268CA7D200C459C0 /* AlarmHistoryViewController.swift */,
+				D23CE90D268CA7DD00C459C0 /* AlarmNoticeViewController.swift */,
+			);
+			path = AlarmUI;
+			sourceTree = "<group>";
+		};
 		D253D387267D8EF3003AB457 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +230,7 @@
 			children = (
 				D2C5AE882678D75F003B123D /* Main.storyboard */,
 				D25985B92678E82200395A4E /* Home.storyboard */,
+				D23CE907268CA77900C459C0 /* Alarm.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -308,8 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				D25985BC2678E8E000395A4E /* HomeUI */,
+				D23CE90A268CA7B000C459C0 /* AlarmUI */,
 				D2C5AE992678DB2E003B123D /* SearchViewController.swift */,
-				D2C5AE9B2678DB3D003B123D /* AlarmViewController.swift */,
 				D2C5AE9D2678DB4E003B123D /* MyViewController.swift */,
 				D2C5AEA32678DF15003B123D /* TabBarViewController.swift */,
 				D216AE2F2683725C00826B66 /* DetailViewController.swift */,
@@ -423,6 +440,7 @@
 				D2FF9A732682163100AFF268 /* CategoryCollectionViewCell.xib in Resources */,
 				D2C5AE8F2678D760003B123D /* LaunchScreen.storyboard in Resources */,
 				D2FF9A5F2681FE3100AFF268 /* MainNewTableViewCell.xib in Resources */,
+				D23CE909268CA77900C459C0 /* Alarm.storyboard in Resources */,
 				D2C5AEA02678DD90003B123D /* Assets.xcassets in Resources */,
 				D2C5AE8A2678D75F003B123D /* Main.storyboard in Resources */,
 				D25985BA2678E82200395A4E /* Home.storyboard in Resources */,
@@ -500,6 +518,7 @@
 				D2C5AE9A2678DB2E003B123D /* SearchViewController.swift in Sources */,
 				D253D392267D9FE7003AB457 /* MainHomeCategoryViewController.swift in Sources */,
 				D21280722685942C00EF3178 /* DetailMovieListViewModel.swift in Sources */,
+				D23CE90C268CA7D200C459C0 /* AlarmHistoryViewController.swift in Sources */,
 				D28AEEC3267A3CB5008E509E /* CustomUIButton.swift in Sources */,
 				D216AE232682FA7100826B66 /* MoviePopular.swift in Sources */,
 				D21280762685945000EF3178 /* DetailMovieInfo.swift in Sources */,
@@ -521,6 +540,7 @@
 				D212807E268618C900EF3178 /* SearchCollectionReusableView.swift in Sources */,
 				D223FF722679BE070060BD99 /* MovieNetworkManager.swift in Sources */,
 				D2C339C42680C26600866069 /* KaKaoCustomUIButton.swift in Sources */,
+				D23CE90E268CA7DD00C459C0 /* AlarmNoticeViewController.swift in Sources */,
 				D2FF9A79268232C000AFF268 /* MovieTopRated.swift in Sources */,
 				D25985C52678E98C00395A4E /* LikeViewController.swift in Sources */,
 				D2FF9A6826820C1F00AFF268 /* BeautyCategoryViewController.swift in Sources */,
@@ -534,6 +554,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D23CE907268CA77900C459C0 /* Alarm.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D23CE908268CA77900C459C0 /* Base */,
+			);
+			name = Alarm.storyboard;
+			sourceTree = "<group>";
+		};
 		D2C5AE882678D75F003B123D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -1,13 +1,13 @@
 //
-//  AlarmViewController.swift
+//  AlarmHistoryViewController.swift
 //  kakaoMakers
 //
-//  Created by 이민욱 on 2021/06/15.
+//  Created by 이민욱 on 2021/06/30.
 //
 
 import UIKit
 
-class AlarmViewController: UIViewController {
+class AlarmHistoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
