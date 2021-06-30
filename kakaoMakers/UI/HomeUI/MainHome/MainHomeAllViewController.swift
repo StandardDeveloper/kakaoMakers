@@ -7,13 +7,22 @@
 
 import UIKit
 
+class Feed {
+    let content : String
+    var isFavorite : Bool = false // 하트
+    var isThumbsUp : Bool = false // 따봉
+    // 생성자
+    init(content: String) {
+        self.content = content
+    }
+}
+
 class MainHomeAllViewController: UIViewController {
     
     @IBOutlet weak var mainTableView: UITableView!
     
     var movieNetworkProvider = MovieNetworkManager()
     private var movieListVM: MovieNowPlaying!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,12 +86,13 @@ extension MainHomeAllViewController: UITableViewDelegate, UITableViewDataSource 
         cell.oderLabel.text = "\(movieVM.id!)명이 주문했어요"
         let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
         cell.posterImageView.kf.setImage(with: URL(string: imagePath))
-        
+        //let likeCount = movieVM.vote_count
+        //cell.likeBtn.setTitle(String(likeCount!), for: .normal)
+        cell.likeBtn.setTitle("좋아요", for: .normal)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "toDetail", sender: indexPath)
     }
-    
 }

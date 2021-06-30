@@ -39,4 +39,10 @@ extension MovieViewModel {
     var poster_path: String? {
         return self.movie.poster_path
     }
+    var vote_count: Int? {
+        return self.movie.vote_count
+    }
+    var heartFlag: Bool? {
+        return self.movie.heartFlag
+    }
 }

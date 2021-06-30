@@ -19,4 +19,6 @@ struct Movie: Decodable {
     let release_date: String?
     let overview: String?
     let poster_path: String?
+    let vote_count: Int?
+    let heartFlag: Bool?
 }

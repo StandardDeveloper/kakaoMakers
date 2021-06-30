@@ -45,7 +45,7 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXs-aV-jHU">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXs-aV-jHU" customClass="HeartBtn" customModule="kakaoMakers" customModuleProvider="target">
                         <rect key="frame" x="20" y="440" width="100" height="50"/>
                         <color key="backgroundColor" white="0.93999999999999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -53,13 +53,13 @@
                             <constraint firstAttribute="height" constant="50" id="eqY-2t-pP4"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.80392156862745101" green="0.80392156862745101" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <state key="normal" title="345 명" image="heart" catalog="system">
+                        <state key="normal" image="heart" catalog="system">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <connections>
-                            <action selector="likeBtnAction:" destination="qBY-Ir-vJR" eventType="touchUpInside" id="sYQ-sP-Ffn"/>
+                            <action selector="likeBtnAction:" destination="qBY-Ir-vJR" eventType="touchUpInside" id="4MN-Hg-oxL"/>
                         </connections>
                     </button>
                 </subviews>
@@ -77,7 +77,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="infoLabel" destination="kbI-qM-lBd" id="VJZ-HL-RUz"/>
-                <outlet property="likeBtn" destination="zXs-aV-jHU" id="jOx-3m-rcJ"/>
+                <outlet property="likeBtn" destination="zXs-aV-jHU" id="5f3-mr-nEU"/>
                 <outlet property="oderLabel" destination="pcp-4f-L9A" id="t5w-rD-NVW"/>
                 <outlet property="posterImageView" destination="G6n-P6-PBd" id="cHi-eT-zvo"/>
                 <outlet property="titleLabel" destination="jtm-44-olL" id="Fxw-wv-U5T"/>
