@@ -57,6 +57,9 @@
 		D2C5AE9E2678DB4E003B123D /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5AE9D2678DB4E003B123D /* MyViewController.swift */; };
 		D2C5AEA02678DD90003B123D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C5AE9F2678DD90003B123D /* Assets.xcassets */; };
 		D2C5AEA42678DF15003B123D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5AEA32678DF15003B123D /* TabBarViewController.swift */; };
+		D2C68EBA268DD506004FD6B1 /* MyPageLoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C68EB9268DD506004FD6B1 /* MyPageLoginTableViewCell.swift */; };
+		D2C68EBD268DE2FF004FD6B1 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C68EBC268DE2FF004FD6B1 /* LoginPageViewController.swift */; };
+		D2E21C3B268CD03B00BF69D9 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E21C3A268CD03B00BF69D9 /* MyPage.storyboard */; };
 		D2FF9A5F2681FE3100AFF268 /* MainNewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FF9A5E2681FE3100AFF268 /* MainNewTableViewCell.xib */; };
 		D2FF9A612682006C00AFF268 /* MainHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF9A602682006C00AFF268 /* MainHomeTableViewCell.swift */; };
 		D2FF9A6626820C0F00AFF268 /* FoodCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF9A6526820C0F00AFF268 /* FoodCategoryViewController.swift */; };
@@ -126,6 +129,9 @@
 		D2C5AE9D2678DB4E003B123D /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		D2C5AE9F2678DD90003B123D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2C5AEA32678DF15003B123D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		D2C68EB9268DD506004FD6B1 /* MyPageLoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageLoginTableViewCell.swift; sourceTree = "<group>"; };
+		D2C68EBC268DE2FF004FD6B1 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		D2E21C3A268CD03B00BF69D9 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = SOURCE_ROOT; };
 		D2FF9A5E2681FE3100AFF268 /* MainNewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainNewTableViewCell.xib; sourceTree = "<group>"; };
 		D2FF9A602682006C00AFF268 /* MainHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeTableViewCell.swift; sourceTree = "<group>"; };
 		D2FF9A6526820C0F00AFF268 /* FoodCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +238,7 @@
 		D25985BB2678E8B900395A4E /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				D2E21C3A268CD03B00BF69D9 /* MyPage.storyboard */,
 				D2C5AE882678D75F003B123D /* Main.storyboard */,
 				D25985B92678E82200395A4E /* Home.storyboard */,
 				D23CE907268CA77900C459C0 /* Alarm.storyboard */,
@@ -276,6 +283,7 @@
 				D24E77B3268A35A000795ED1 /* DetailOverviewTableViewCell.swift */,
 				D23CE90F268CB09A00C459C0 /* AlarmHistoryTableViewCell.swift */,
 				D23CE911268CC1CB00C459C0 /* AlarmNoticeTableViewCell.swift */,
+				D2C68EB9268DD506004FD6B1 /* MyPageLoginTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -333,11 +341,20 @@
 				D25985BC2678E8E000395A4E /* HomeUI */,
 				D23CE90A268CA7B000C459C0 /* AlarmUI */,
 				D2C5AE992678DB2E003B123D /* SearchViewController.swift */,
-				D2C5AE9D2678DB4E003B123D /* MyViewController.swift */,
+				D2C68EBB268DE2DB004FD6B1 /* MyPage */,
 				D2C5AEA32678DF15003B123D /* TabBarViewController.swift */,
 				D216AE2F2683725C00826B66 /* DetailViewController.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		D2C68EBB268DE2DB004FD6B1 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				D2C5AE9D2678DB4E003B123D /* MyViewController.swift */,
+				D2C68EBC268DE2FF004FD6B1 /* LoginPageViewController.swift */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 		D2FF9A6226820B9700AFF268 /* MainHomeCategory */ = {
@@ -446,6 +463,7 @@
 				D2FF9A732682163100AFF268 /* CategoryCollectionViewCell.xib in Resources */,
 				D2C5AE8F2678D760003B123D /* LaunchScreen.storyboard in Resources */,
 				D2FF9A5F2681FE3100AFF268 /* MainNewTableViewCell.xib in Resources */,
+				D2E21C3B268CD03B00BF69D9 /* MyPage.storyboard in Resources */,
 				D23CE909268CA77900C459C0 /* Alarm.storyboard in Resources */,
 				D2C5AEA02678DD90003B123D /* Assets.xcassets in Resources */,
 				D2C5AE8A2678D75F003B123D /* Main.storyboard in Resources */,
@@ -507,6 +525,7 @@
 				D2FF9A6626820C0F00AFF268 /* FoodCategoryViewController.swift in Sources */,
 				D23CE910268CB09A00C459C0 /* AlarmHistoryTableViewCell.swift in Sources */,
 				D21280672684CD9E00EF3178 /* PagingImageHeardView.swift in Sources */,
+				D2C68EBD268DE2FF004FD6B1 /* LoginPageViewController.swift in Sources */,
 				D2FF9A6A26820C3100AFF268 /* LivingCategoryViewController.swift in Sources */,
 				D2C339C62680C7FF00866069 /* LikeInfoTableViewCell.swift in Sources */,
 				D253D38B267D8F21003AB457 /* MovieListViewModel.swift in Sources */,
@@ -531,6 +550,7 @@
 				D216AE232682FA7100826B66 /* MoviePopular.swift in Sources */,
 				D21280762685945000EF3178 /* DetailMovieInfo.swift in Sources */,
 				D216AE302683725C00826B66 /* DetailViewController.swift in Sources */,
+				D2C68EBA268DD506004FD6B1 /* MyPageLoginTableViewCell.swift in Sources */,
 				D2FF9A722682163100AFF268 /* CategoryCollectionViewCell.swift in Sources */,
 				D25985BF2678E91400395A4E /* RecentlyViewController.swift in Sources */,
 				D212806F2685788000EF3178 /* DetailTableViewCell.swift in Sources */,
