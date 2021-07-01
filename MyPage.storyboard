@@ -144,11 +144,17 @@
                                 <rect key="frame" x="143" y="291" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="아이디 찾기"/>
+                                <connections>
+                                    <segue destination="x4L-B7-780" kind="push" id="oES-DQ-g7D"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jah-vF-Pd2">
                                 <rect key="frame" x="220" y="291" width="82" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="비밀번호 찾기"/>
+                                <connections>
+                                    <segue destination="GXF-kw-hfQ" kind="push" id="1TC-IW-8xg"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Veh-tn-8IR">
                                 <rect key="frame" x="216" y="300" width="1" height="13"/>
@@ -159,6 +165,9 @@
                                 <rect key="frame" x="22" y="329" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="회원가입"/>
+                                <connections>
+                                    <segue destination="RzH-md-QAg" kind="push" id="hd1-Wr-rjW"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3KZ-Nx-JVR">
                                 <rect key="frame" x="10" y="414" width="128" height="1"/>
@@ -177,6 +186,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yi-gr-JfP">
+                                <rect key="frame" x="22" y="439" width="52" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="f_logo_RGB-Hex-Blue_512"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDo-yy-owF">
+                                <rect key="frame" x="99" y="439" width="52" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="google"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ou0-U1-Ih7">
+                                <rect key="frame" x="181" y="439" width="52" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="apple"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlf-MV-sEb">
+                                <rect key="frame" x="264" y="439" width="52" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="naver"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PZ-Eb-cwB">
+                                <rect key="frame" x="340" y="439" width="52" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="kakao-icon"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fgm-sZ-tUH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -186,10 +220,75 @@
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="appleLoginBtn" destination="ou0-U1-Ih7" id="cag-9i-ZdI"/>
+                        <outlet property="facebookLoginBtn" destination="6yi-gr-JfP" id="kAO-UC-cYl"/>
+                        <outlet property="findIDBtn" destination="gnf-Se-95Z" id="ooq-8f-QIu"/>
+                        <outlet property="findPWBtn" destination="Jah-vF-Pd2" id="ldJ-IG-eGy"/>
+                        <outlet property="googleLoginBtn" destination="bDo-yy-owF" id="fRV-Nz-gQP"/>
+                        <outlet property="idTextfield" destination="sDM-bK-eLg" id="HQq-NB-DmL"/>
+                        <outlet property="kakaoLoginBtn" destination="3PZ-Eb-cwB" id="2ce-qW-jD1"/>
+                        <outlet property="loginBtn" destination="Rtk-LJ-MQB" id="l4l-Gp-Mvs"/>
+                        <outlet property="loginTypeTextlabel" destination="IjM-Ii-Kdn" id="xmE-Kh-fmV"/>
+                        <outlet property="naverLoginBtn" destination="qlf-MV-sEb" id="xbD-kK-gGT"/>
+                        <outlet property="partitionView" destination="Veh-tn-8IR" id="cb7-W5-xSH"/>
+                        <outlet property="partitionView2" destination="3KZ-Nx-JVR" id="DAk-qE-KjC"/>
+                        <outlet property="partitionView3" destination="fEn-9n-Gr5" id="tRT-bB-YgS"/>
+                        <outlet property="pwTextfield" destination="8Ub-62-BPn" id="eJ4-v0-fZn"/>
+                        <outlet property="signupBtn" destination="Ako-nS-zcU" id="vD9-Wg-hdf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ln-x1-rHj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8036.2318840579719" y="75"/>
+        </scene>
+        <!--FindPW View Controller-->
+        <scene sceneID="UZi-e2-Dl5">
+            <objects>
+                <viewController id="GXF-kw-hfQ" customClass="FindPWViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="avY-6i-if2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ggl-0P-MDX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6JU-cM-m6V"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CDV-cB-cuz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9784" y="-133"/>
+        </scene>
+        <!--SignUP View Controller-->
+        <scene sceneID="hrn-pG-9WA">
+            <objects>
+                <viewController id="RzH-md-QAg" customClass="SignUPViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wnU-CC-hTA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QFH-AG-fC0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AQk-87-6hu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0GX-PJ-qsl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10552" y="-133"/>
+        </scene>
+        <!--FindID View Controller-->
+        <scene sceneID="hhv-al-7Wa">
+            <objects>
+                <viewController id="x4L-B7-780" customClass="FindIDViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Oy-9C-GGF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="iCk-sN-mCn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="afJ-OM-4kb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9qL-bp-coW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8983" y="-133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u9p-xZ-BMa">
@@ -213,7 +312,7 @@
         <!--Navigation Controller-->
         <scene sceneID="iKP-Uq-6K4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qK0-Rh-lAX" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navVC" automaticallyAdjustsScrollViewInsets="NO" id="qK0-Rh-lAX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ved-Fi-Poh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -230,6 +329,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="apple" width="512" height="512"/>
+        <image name="f_logo_RGB-Hex-Blue_512" width="512" height="512"/>
+        <image name="google" width="512" height="512"/>
+        <image name="kakao-icon" width="367" height="368"/>
+        <image name="naver" width="512" height="512"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">

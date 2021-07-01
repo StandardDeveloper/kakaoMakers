@@ -59,6 +59,9 @@
 		D2C5AEA42678DF15003B123D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5AEA32678DF15003B123D /* TabBarViewController.swift */; };
 		D2C68EBA268DD506004FD6B1 /* MyPageLoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C68EB9268DD506004FD6B1 /* MyPageLoginTableViewCell.swift */; };
 		D2C68EBD268DE2FF004FD6B1 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C68EBC268DE2FF004FD6B1 /* LoginPageViewController.swift */; };
+		D2C68EBF268E13CA004FD6B1 /* FindIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C68EBE268E13CA004FD6B1 /* FindIDViewController.swift */; };
+		D2C68EC1268E13D2004FD6B1 /* FindPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C68EC0268E13D2004FD6B1 /* FindPWViewController.swift */; };
+		D2C68EC3268E1424004FD6B1 /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C68EC2268E1424004FD6B1 /* SignUPViewController.swift */; };
 		D2E21C3B268CD03B00BF69D9 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E21C3A268CD03B00BF69D9 /* MyPage.storyboard */; };
 		D2FF9A5F2681FE3100AFF268 /* MainNewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FF9A5E2681FE3100AFF268 /* MainNewTableViewCell.xib */; };
 		D2FF9A612682006C00AFF268 /* MainHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF9A602682006C00AFF268 /* MainHomeTableViewCell.swift */; };
@@ -131,6 +134,9 @@
 		D2C5AEA32678DF15003B123D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D2C68EB9268DD506004FD6B1 /* MyPageLoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageLoginTableViewCell.swift; sourceTree = "<group>"; };
 		D2C68EBC268DE2FF004FD6B1 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		D2C68EBE268E13CA004FD6B1 /* FindIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDViewController.swift; sourceTree = "<group>"; };
+		D2C68EC0268E13D2004FD6B1 /* FindPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWViewController.swift; sourceTree = "<group>"; };
+		D2C68EC2268E1424004FD6B1 /* SignUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
 		D2E21C3A268CD03B00BF69D9 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = SOURCE_ROOT; };
 		D2FF9A5E2681FE3100AFF268 /* MainNewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainNewTableViewCell.xib; sourceTree = "<group>"; };
 		D2FF9A602682006C00AFF268 /* MainHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -353,6 +359,9 @@
 			children = (
 				D2C5AE9D2678DB4E003B123D /* MyViewController.swift */,
 				D2C68EBC268DE2FF004FD6B1 /* LoginPageViewController.swift */,
+				D2C68EBE268E13CA004FD6B1 /* FindIDViewController.swift */,
+				D2C68EC0268E13D2004FD6B1 /* FindPWViewController.swift */,
+				D2C68EC2268E1424004FD6B1 /* SignUPViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -562,11 +571,13 @@
 				D2C5AEA42678DF15003B123D /* TabBarViewController.swift in Sources */,
 				D2C5AE9E2678DB4E003B123D /* MyViewController.swift in Sources */,
 				D25334A62686C9CE0031FFD2 /* MovieImage.swift in Sources */,
+				D2C68EBF268E13CA004FD6B1 /* FindIDViewController.swift in Sources */,
 				D23CE8FE268B4A1D00C459C0 /* HeartBtn.swift in Sources */,
 				D216AE2E2683637700826B66 /* RecentlyTableViewCell.swift in Sources */,
 				D253D390267D9FDC003AB457 /* MainHomeNewViewController.swift in Sources */,
 				D212807E268618C900EF3178 /* SearchCollectionReusableView.swift in Sources */,
 				D223FF722679BE070060BD99 /* MovieNetworkManager.swift in Sources */,
+				D2C68EC1268E13D2004FD6B1 /* FindPWViewController.swift in Sources */,
 				D2C339C42680C26600866069 /* KaKaoCustomUIButton.swift in Sources */,
 				D23CE90E268CA7DD00C459C0 /* AlarmNoticeViewController.swift in Sources */,
 				D2FF9A79268232C000AFF268 /* MovieTopRated.swift in Sources */,
@@ -574,6 +585,7 @@
 				D2FF9A6826820C1F00AFF268 /* BeautyCategoryViewController.swift in Sources */,
 				D2FF9A7526822F4C00AFF268 /* MovieUpComming.swift in Sources */,
 				D2C5AE972678DACC003B123D /* HomeViewController.swift in Sources */,
+				D2C68EC3268E1424004FD6B1 /* SignUPViewController.swift in Sources */,
 				D212806D2684CE3700EF3178 /* DetailImageViewController.swift in Sources */,
 				D25334A82686CF6A0031FFD2 /* Product.swift in Sources */,
 			);

@@ -35,14 +35,14 @@ class MyViewController: UIViewController {
     
     @IBAction func moveLoginPage(_ sender: Any) {
         
-        let mainSB = UIStoryboard(name: "MyPage", bundle: nil)
-        let loginpageVC = mainSB.instantiateViewController(withIdentifier: "loginpageVC")
-        //loginpageVC.modalPresentationStyle = .fullScreen
-        present(loginpageVC, animated: true, completion: nil)
+//        let mainSB = UIStoryboard(name: "MyPage", bundle: nil)
+//        let loginpageVC = mainSB.instantiateViewController(withIdentifier: "navVC") as! UINavigationController
+//        loginpageVC.modalPresentationStyle = .fullScreen
+//        present(loginpageVC, animated: true, completion: nil)
         
-//        let loginpageVC = self.storyboard?.instantiateViewController(withIdentifier: "loginpageVC")
-//        loginpageVC?.modalPresentationStyle = .fullScreen
-//        present(loginpageVC!, animated: true, completion: nil)
+        let loginpageVC = self.storyboard?.instantiateViewController(withIdentifier: "navVC") as! UINavigationController
+        loginpageVC.modalPresentationStyle = .fullScreen
+        present(loginpageVC, animated: true, completion: nil)
     }
     
 }
