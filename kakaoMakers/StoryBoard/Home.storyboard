@@ -428,15 +428,24 @@
                                                     </collectionViewFlowLayout>
                                                     <cells/>
                                                 </collectionView>
+                                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Yc4-MR-dCf">
+                                                    <rect key="frame" x="20" y="263" width="374" height="27.5"/>
+                                                    <color key="pageIndicatorTintColor" red="0.80392156859999997" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="currentPageIndicatorTintColor" red="0.79607843140000001" green="0.41568627450000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </pageControl>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="rdQ-3d-gTL" firstAttribute="leading" secondItem="0cH-ck-bch" secondAttribute="leading" id="Ol0-7Z-TX3"/>
                                                 <constraint firstItem="rdQ-3d-gTL" firstAttribute="top" secondItem="0cH-ck-bch" secondAttribute="top" id="SPK-8F-iyG"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yc4-MR-dCf" secondAttribute="trailing" constant="20" id="WvP-Ef-cz3"/>
+                                                <constraint firstItem="Yc4-MR-dCf" firstAttribute="leading" secondItem="0cH-ck-bch" secondAttribute="leading" constant="20" id="cg0-3f-xIA"/>
+                                                <constraint firstAttribute="bottom" secondItem="Yc4-MR-dCf" secondAttribute="bottom" constant="10" id="fAW-pk-5fa"/>
                                                 <constraint firstAttribute="bottom" secondItem="rdQ-3d-gTL" secondAttribute="bottom" id="fYB-ln-kN2"/>
                                                 <constraint firstAttribute="trailing" secondItem="rdQ-3d-gTL" secondAttribute="trailing" id="lfS-yR-s1X"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="pageControl" destination="Yc4-MR-dCf" id="fK3-t3-Obk"/>
                                             <outlet property="pagingCollectionView" destination="rdQ-3d-gTL" id="70g-Br-8vO"/>
                                         </connections>
                                     </tableViewCell>
