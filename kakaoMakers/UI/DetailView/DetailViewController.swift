@@ -28,16 +28,7 @@ class DetailViewController: UIViewController {
         getMovieImages()
         navigationSetup()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "toDetailImage" {
-            if let vc = segue.destination as? PagingImageViewController {
-                vc.movieIndex = movieId
-            }
-        }
-    }
-    
     lazy var backButton: UIBarButtonItem = {
         let buttonIcon = UIImage(systemName: "chevron.backward")
         let button = UIBarButtonItem(title: nil, style: UIBarButtonItem.Style.done, target: self, action: #selector(backBtn(_:)))
