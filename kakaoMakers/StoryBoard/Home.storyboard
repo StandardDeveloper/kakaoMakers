@@ -406,36 +406,42 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ivv-xW-3Gs">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="ARS-d8-0am" customClass="PagingImageHeardView" customModule="kakaoMakers" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfN-bc-O61">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
-                                            <connections>
-                                                <segue destination="dZV-Tm-5st" kind="embed" identifier="toDetailImage" id="8XQ-4U-g8H"/>
-                                            </connections>
-                                        </containerView>
-                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="1XJ-l9-r8k">
-                                            <rect key="frame" x="146.5" y="299" width="121.5" height="27.5"/>
-                                        </pageControl>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstItem="1XJ-l9-r8k" firstAttribute="centerX" secondItem="ARS-d8-0am" secondAttribute="centerX" id="8Mh-P6-ddQ"/>
-                                        <constraint firstAttribute="trailing" secondItem="gfN-bc-O61" secondAttribute="trailing" id="Hmp-fZ-IXU"/>
-                                        <constraint firstItem="1XJ-l9-r8k" firstAttribute="top" secondItem="gfN-bc-O61" secondAttribute="bottom" constant="-51" id="cLK-FA-Kqu"/>
-                                        <constraint firstItem="gfN-bc-O61" firstAttribute="top" secondItem="ARS-d8-0am" secondAttribute="top" id="e1F-C5-dFi"/>
-                                        <constraint firstAttribute="bottom" secondItem="gfN-bc-O61" secondAttribute="bottom" id="mZp-mh-olg"/>
-                                        <constraint firstItem="gfN-bc-O61" firstAttribute="leading" secondItem="ARS-d8-0am" secondAttribute="leading" id="qTF-JX-w9Y"/>
-                                    </constraints>
-                                    <connections>
-                                        <outlet property="pageControl" destination="1XJ-l9-r8k" id="bof-Du-Fp7"/>
-                                    </connections>
-                                </view>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pagingCell" id="lA3-o7-lbm" customClass="PagingTableViewCell" customModule="kakaoMakers" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="300.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lA3-o7-lbm" id="0cH-ck-bch">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="300.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rdQ-3d-gTL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="300.5"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="300" id="stI-Jq-jGr"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OPU-Wo-6ur">
+                                                        <size key="itemSize" width="128" height="128"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells/>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rdQ-3d-gTL" firstAttribute="leading" secondItem="0cH-ck-bch" secondAttribute="leading" id="Ol0-7Z-TX3"/>
+                                                <constraint firstItem="rdQ-3d-gTL" firstAttribute="top" secondItem="0cH-ck-bch" secondAttribute="top" id="SPK-8F-iyG"/>
+                                                <constraint firstAttribute="bottom" secondItem="rdQ-3d-gTL" secondAttribute="bottom" id="fYB-ln-kN2"/>
+                                                <constraint firstAttribute="trailing" secondItem="rdQ-3d-gTL" secondAttribute="trailing" id="lfS-yR-s1X"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pagingCollectionView" destination="rdQ-3d-gTL" id="70g-Br-8vO"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" rowHeight="100" id="ul3-f1-hcb" customClass="DetailTableViewCell" customModule="kakaoMakers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="374.5" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="325" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ul3-f1-hcb" id="B9y-bl-SvV">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -501,7 +507,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailInfo" rowHeight="123" id="9ox-da-9jc" customClass="DetailInfoTableViewCell" customModule="kakaoMakers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="474.5" width="414" height="123"/>
+                                        <rect key="frame" x="0.0" y="425" width="414" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9ox-da-9jc" id="gZQ-Ve-5GZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
@@ -551,7 +557,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailOverview" rowHeight="80" id="EN5-O5-lwf" customClass="DetailOverviewTableViewCell" customModule="kakaoMakers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="597.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="548" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EN5-O5-lwf" id="Jzk-KE-eer">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -1245,43 +1251,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtK-y2-lt9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4343.4782608695659" y="750"/>
-        </scene>
-        <!--Paging Image View Controller-->
-        <scene sceneID="Zdw-Qx-Utl">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="dZV-Tm-5st" customClass="PagingImageViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qTc-GO-Yrd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="10063.76811594203" y="750"/>
-        </scene>
-        <!--Detail Image View Controller-->
-        <scene sceneID="DBX-c9-blP">
-            <objects>
-                <viewController storyboardIdentifier="detailIimageView" id="jPv-Aq-cpI" customClass="DetailImageViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rAk-TL-Vb8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CVw-eX-8ZW">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="0Ss-Q5-8Nu"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="0Ss-Q5-8Nu" firstAttribute="trailing" secondItem="CVw-eX-8ZW" secondAttribute="trailing" id="JPV-E8-bfJ"/>
-                            <constraint firstItem="CVw-eX-8ZW" firstAttribute="top" secondItem="0Ss-Q5-8Nu" secondAttribute="top" id="N8n-rf-NWc"/>
-                            <constraint firstItem="CVw-eX-8ZW" firstAttribute="leading" secondItem="0Ss-Q5-8Nu" secondAttribute="leading" id="OJb-03-U18"/>
-                            <constraint firstItem="0Ss-Q5-8Nu" firstAttribute="bottom" secondItem="CVw-eX-8ZW" secondAttribute="bottom" id="WU0-jV-6Lx"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="imageView" destination="CVw-eX-8ZW" id="xS7-4F-zMs"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uub-Vy-Xye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="10886.956521739132" y="750"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dpP-yO-zde">

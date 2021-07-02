@@ -63,6 +63,9 @@
 		D2C68EC1268E13D2004FD6B1 /* FindPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C68EC0268E13D2004FD6B1 /* FindPWViewController.swift */; };
 		D2C68EC3268E1424004FD6B1 /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C68EC2268E1424004FD6B1 /* SignUPViewController.swift */; };
 		D2E21C3B268CD03B00BF69D9 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E21C3A268CD03B00BF69D9 /* MyPage.storyboard */; };
+		D2EC472F268EEAA4002DC5B0 /* PagingImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EC472D268EEAA4002DC5B0 /* PagingImageCollectionViewCell.swift */; };
+		D2EC4730268EEAA4002DC5B0 /* PagingImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2EC472E268EEAA4002DC5B0 /* PagingImageCollectionViewCell.xib */; };
+		D2EC4732268EF6DC002DC5B0 /* PagingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EC4731268EF6DC002DC5B0 /* PagingTableViewCell.swift */; };
 		D2FF9A5F2681FE3100AFF268 /* MainNewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FF9A5E2681FE3100AFF268 /* MainNewTableViewCell.xib */; };
 		D2FF9A612682006C00AFF268 /* MainHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF9A602682006C00AFF268 /* MainHomeTableViewCell.swift */; };
 		D2FF9A6626820C0F00AFF268 /* FoodCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FF9A6526820C0F00AFF268 /* FoodCategoryViewController.swift */; };
@@ -138,6 +141,9 @@
 		D2C68EC0268E13D2004FD6B1 /* FindPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWViewController.swift; sourceTree = "<group>"; };
 		D2C68EC2268E1424004FD6B1 /* SignUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
 		D2E21C3A268CD03B00BF69D9 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = SOURCE_ROOT; };
+		D2EC472D268EEAA4002DC5B0 /* PagingImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2EC472E268EEAA4002DC5B0 /* PagingImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PagingImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		D2EC4731268EF6DC002DC5B0 /* PagingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingTableViewCell.swift; sourceTree = "<group>"; };
 		D2FF9A5E2681FE3100AFF268 /* MainNewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainNewTableViewCell.xib; sourceTree = "<group>"; };
 		D2FF9A602682006C00AFF268 /* MainHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeTableViewCell.swift; sourceTree = "<group>"; };
 		D2FF9A6526820C0F00AFF268 /* FoodCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryViewController.swift; sourceTree = "<group>"; };
@@ -290,6 +296,7 @@
 				D23CE90F268CB09A00C459C0 /* AlarmHistoryTableViewCell.swift */,
 				D23CE911268CC1CB00C459C0 /* AlarmNoticeTableViewCell.swift */,
 				D2C68EB9268DD506004FD6B1 /* MyPageLoginTableViewCell.swift */,
+				D2EC4731268EF6DC002DC5B0 /* PagingTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -346,10 +353,10 @@
 			children = (
 				D25985BC2678E8E000395A4E /* HomeUI */,
 				D23CE90A268CA7B000C459C0 /* AlarmUI */,
-				D2C5AE992678DB2E003B123D /* SearchViewController.swift */,
+				D2EC4727268EE9DA002DC5B0 /* SearchUI */,
 				D2C68EBB268DE2DB004FD6B1 /* MyPage */,
-				D2C5AEA32678DF15003B123D /* TabBarViewController.swift */,
-				D216AE2F2683725C00826B66 /* DetailViewController.swift */,
+				D2EC4726268EE9C4002DC5B0 /* TabBar */,
+				D2EC4728268EE9E8002DC5B0 /* DetailView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -364,6 +371,30 @@
 				D2C68EC2268E1424004FD6B1 /* SignUPViewController.swift */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		D2EC4726268EE9C4002DC5B0 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D2C5AEA32678DF15003B123D /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		D2EC4727268EE9DA002DC5B0 /* SearchUI */ = {
+			isa = PBXGroup;
+			children = (
+				D2C5AE992678DB2E003B123D /* SearchViewController.swift */,
+			);
+			path = SearchUI;
+			sourceTree = "<group>";
+		};
+		D2EC4728268EE9E8002DC5B0 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				D216AE2F2683725C00826B66 /* DetailViewController.swift */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		D2FF9A6226820B9700AFF268 /* MainHomeCategory */ = {
@@ -385,6 +416,8 @@
 				D2FF9A702682163100AFF268 /* CategoryCollectionViewCell.swift */,
 				D2FF9A712682163100AFF268 /* CategoryCollectionViewCell.xib */,
 				D212807D268618C900EF3178 /* SearchCollectionReusableView.swift */,
+				D2EC472D268EEAA4002DC5B0 /* PagingImageCollectionViewCell.swift */,
+				D2EC472E268EEAA4002DC5B0 /* PagingImageCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -470,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2FF9A732682163100AFF268 /* CategoryCollectionViewCell.xib in Resources */,
+				D2EC4730268EEAA4002DC5B0 /* PagingImageCollectionViewCell.xib in Resources */,
 				D2C5AE8F2678D760003B123D /* LaunchScreen.storyboard in Resources */,
 				D2FF9A5F2681FE3100AFF268 /* MainNewTableViewCell.xib in Resources */,
 				D2E21C3B268CD03B00BF69D9 /* MyPage.storyboard in Resources */,
@@ -565,8 +599,10 @@
 				D212806F2685788000EF3178 /* DetailTableViewCell.swift in Sources */,
 				D253D38E267D9FCE003AB457 /* MainHomeAllViewController.swift in Sources */,
 				D2FF9A772682318800AFF268 /* MovieNowPlaying.swift in Sources */,
+				D2EC4732268EF6DC002DC5B0 /* PagingTableViewCell.swift in Sources */,
 				D25985C32678E98200395A4E /* CommingSoonViewController.swift in Sources */,
 				D2FF9A612682006C00AFF268 /* MainHomeTableViewCell.swift in Sources */,
+				D2EC472F268EEAA4002DC5B0 /* PagingImageCollectionViewCell.swift in Sources */,
 				D27CE089267A6AB400D7EC83 /* LikeTableViewCell.swift in Sources */,
 				D2C5AEA42678DF15003B123D /* TabBarViewController.swift in Sources */,
 				D2C5AE9E2678DB4E003B123D /* MyViewController.swift in Sources */,

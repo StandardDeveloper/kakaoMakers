@@ -65,7 +65,6 @@ struct MovieNetworkManager: MovieNetwork {
                     
                     if let detailMovie = detailMovieJson {
                         completion(detailMovie)
-                        print("***************", detailMovie)
                         ProgressHUD.dismiss()
                     }
                 }
