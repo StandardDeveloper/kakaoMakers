@@ -14,10 +14,8 @@ class PagingTableViewCell: UITableViewCell {
     
     var networkProvider = MovieNetworkManager()
     var movieImages = [MovieImage]()
-    
     var setMovieID : ((Int) -> (Int))?
-    
-    var movieID : Int = 508943
+    var movieID : Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,27 +25,33 @@ class PagingTableViewCell: UITableViewCell {
         pagingCollectionView.register(UINib(nibName: "PagingImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "pagingImageCollectionCell")
         pagingCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        getMovieImages()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        pageControl.numberOfPages = movieImages.count
-        pageControl.currentPage = 0
-        pageControl.pageIndicatorTintColor = UIColor.gray
-        pageControl.currentPageIndicatorTintColor = UIColor.white
     }
     
     func getMovieImages() {
+        print("&&&&&&&&&&&&", movieID)
         networkProvider.getMovieImages(movieID: movieID) { results in
 
             self.movieImages = results
+            
+            self.pageControl.numberOfPages = self.movieImages.count
+            self.pageControl.currentPage = 0
+            self.pageControl.pageIndicatorTintColor = .gray
+            self.pageControl.currentPageIndicatorTintColor = .white
             
             OperationQueue.main.addOperation {
                 self.pagingCollectionView.reloadData()
             }
         }
+    }
+    
+    func config(with movieID: Int) {
+        self.movieID = movieID
+        pagingCollectionView.reloadData()
     }
 
 }
@@ -65,7 +69,6 @@ extension PagingTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pagingImageCollectionCell", for: indexPath) as! PagingImageCollectionViewCell
         let imagePath = "https://image.tmdb.org/t/p/w500\(movieImages[indexPath.row].file_path)"
-        print("____________", imagePath)
         cell.pagingImageView.kf.setImage(with: URL(string: imagePath))
         return cell
     }

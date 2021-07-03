@@ -24,4 +24,28 @@ class AlarmHistoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+//    func settingData(isClicked :ExpandingTableViewCellContent, title : String, overview : String, release_data : String, imagePath : String)
+//       
+//       {
+//           if isClicked.expanded == true
+//           {
+//            infoLabel.numberOfLines = 3
+//            titleLabel.text = title
+//            infoLabel.text = overview
+//            dateLabel.text = release_data
+//            historyImageView.kf.setImage(with: URL(string: imagePath))
+//            
+//               
+//           }
+//           else
+//           {
+//            infoLabel.numberOfLines = 0
+//            titleLabel.text = "Test"
+//            infoLabel.text = overview
+//            dateLabel.text = release_data
+//            historyImageView.kf.setImage(with: URL(string: imagePath))
+//            
+//           }
+//       }
+//    
 }

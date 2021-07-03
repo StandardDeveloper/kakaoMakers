@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
     var networkProvider = MovieNetworkManager()
     var detailMove: DetailMovie?
     var movieImages = [MovieImage]()
-    var movieProtocol = MovieIndexSelection()
+    //var movieProtocol = MovieIndexSelection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +95,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource, UISc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = detailTableView.dequeueReusableCell(withIdentifier: "pagingCell", for: indexPath) as! PagingTableViewCell
+            print("+++++++++++", movieId)
+            cell.config(with: movieId)
+            cell.getMovieImages()
             return cell
         }
         else if indexPath.section == 1 {

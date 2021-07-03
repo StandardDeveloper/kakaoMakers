@@ -7,12 +7,23 @@
 
 import UIKit
 
+//class ExpandingTableViewCellContent {
+//
+//    var expanded: Bool
+//
+//    init() {
+//        self.expanded = false
+//    }
+//}
+
 class AlarmHistoryViewController: UIViewController {
 
     @IBOutlet weak var alarmHistoryTableView: UITableView!
     
     var networkProvider = MovieNetworkManager()
     private var movieListVM: MovieNowPlaying!
+    var expandedIndexSet : IndexSet = []
+    //var answerFilterDatasource =  ExpandingTableViewCellContent()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +68,36 @@ extension AlarmHistoryViewController: UITableViewDelegate, UITableViewDataSource
         cell.dateLabel.text = movieVM.release_data
         let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
         cell.historyImageView.kf.setImage(with: URL(string: imagePath))
+        
+        if expandedIndexSet.contains(indexPath.row) {
+            cell.infoLabel.numberOfLines = 0
+        } else {
+            cell.infoLabel.numberOfLines = 1
+        }
+//        let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
+//        cell.settingData(isClicked: answerFilterDatasource, title: movieVM.title!, overview: movieVM.overview!, release_data: movieVM.release_data!,imagePath: imagePath)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//           let content = answerFilterDatasource
+//           content.expanded = !content.expanded
+//           self.alarmHistoryTableView.reloadRows(at: [indexPath], with: .automatic)
+        
+        if(expandedIndexSet.contains(indexPath.row)){
+            expandedIndexSet.remove(indexPath.row)
+        } else {
+            expandedIndexSet.insert(indexPath.row)
+        }
+
+        self.alarmHistoryTableView.reloadRows(at: [indexPath], with: .automatic)
+       }
+    
+  
     
     
 }
