@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MainHomeTableViewCellDelegate {
+    func didPreasHeart(for index: Int, like: Bool)
+}
+
 class MainHomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var posterImageView: UIImageView!
@@ -14,6 +18,9 @@ class MainHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var oderLabel: UILabel!
     @IBOutlet weak var likeBtn: HeartBtn!
+ 
+    var delegate: MainHomeTableViewCellDelegate?
+    var index: Int?
     
     var heartBtnAction : ((Bool) -> Void)?
         
@@ -27,7 +34,10 @@ class MainHomeTableViewCell: UITableViewCell {
 
     }
     
-    @IBAction func likeBtnAction(_ sender: Any) {
-        likeBtn.setFlag(likeBtn.isFlag)
+    @IBAction func likeBtnAction(_ sender: UIButton) {
+        guard let idx = index else {return}
+        if sender.isSelected {
+            
+        }
     }
 }

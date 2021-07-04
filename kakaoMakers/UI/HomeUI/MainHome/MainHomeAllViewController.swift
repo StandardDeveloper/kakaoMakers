@@ -7,22 +7,14 @@
 
 import UIKit
 
-class Feed {
-    let content : String
-    var isFavorite : Bool = false // 하트
-    var isThumbsUp : Bool = false // 따봉
-    // 생성자
-    init(content: String) {
-        self.content = content
-    }
-}
-
 class MainHomeAllViewController: UIViewController {
     
     @IBOutlet weak var mainTableView: UITableView!
     
     var movieNetworkProvider = MovieNetworkManager()
     private var movieListVM: MovieNowPlaying!
+    
+    var likes: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +82,15 @@ extension MainHomeAllViewController: UITableViewDelegate, UITableViewDataSource 
         //cell.likeBtn.setTitle(String(likeCount!), for: .normal)
         cell.likeBtn.setTitle("좋아요", for: .normal)
         return cell
+    }
+    
+    func didPreasHeart(for index: Int, like: Bool) {
+        if like == true {
+            likes[index] = 1
+        }
+        else {
+            likes[index] = 0
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
