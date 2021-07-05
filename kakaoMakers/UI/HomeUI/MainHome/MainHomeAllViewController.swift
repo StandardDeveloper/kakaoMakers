@@ -91,6 +91,7 @@ extension MainHomeAllViewController: UITableViewDelegate, UITableViewDataSource,
     }
     
     func didPreasHeart(for index: Int, like: Bool) {
+        print("**************", index, like)
         if like == true {
             likes[index] = 1
         }

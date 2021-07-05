@@ -11,6 +11,7 @@ class AlarmNoticeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var moreBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

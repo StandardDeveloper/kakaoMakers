@@ -13,13 +13,13 @@ class AlarmNoticeViewController: UIViewController {
 
     var networkPrivider = MovieNetworkManager()
     private var movieListVM: MoviePopular!
+    var expandedIndexSet : IndexSet = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         alarmNoticeTableView.rowHeight = UITableView.automaticDimension
-        //alarmNoticeTableView.estimatedRowHeight = 150
-        
+      
         alarmNoticeTableView.delegate = self
         alarmNoticeTableView.dataSource = self
         
@@ -54,8 +54,26 @@ extension AlarmNoticeViewController: UITableViewDelegate, UITableViewDataSource 
         let movieVM = self.movieListVM.movieAtIndex(indexPath.section, index: indexPath.row)
         cell.titleLabel.text = movieVM.overview
         cell.infoLabel.text = movieVM.release_data
+        
+        if expandedIndexSet.contains(indexPath.row) {
+            cell.titleLabel.numberOfLines = 0
+            cell.moreBtn.setImage(UIImage(systemName: "chevron.up"), for: .normal)
+        } else {
+            cell.titleLabel.numberOfLines = 1
+            cell.moreBtn.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+        }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(expandedIndexSet.contains(indexPath.row)){
+            expandedIndexSet.remove(indexPath.row)
+        } else {
+            expandedIndexSet.insert(indexPath.row)
+        }
+
+        self.alarmNoticeTableView.reloadRows(at: [indexPath], with: .automatic)
+       }
     
     
 }

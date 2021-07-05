@@ -7,15 +7,6 @@
 
 import UIKit
 
-//class ExpandingTableViewCellContent {
-//
-//    var expanded: Bool
-//
-//    init() {
-//        self.expanded = false
-//    }
-//}
-
 class AlarmHistoryViewController: UIViewController {
 
     @IBOutlet weak var alarmHistoryTableView: UITableView!
@@ -23,13 +14,11 @@ class AlarmHistoryViewController: UIViewController {
     var networkProvider = MovieNetworkManager()
     private var movieListVM: MovieNowPlaying!
     var expandedIndexSet : IndexSet = []
-    //var answerFilterDatasource =  ExpandingTableViewCellContent()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         alarmHistoryTableView.rowHeight = UITableView.automaticDimension
-        alarmHistoryTableView.estimatedRowHeight = 150
 
         alarmHistoryTableView.delegate = self
         alarmHistoryTableView.dataSource = self
@@ -71,11 +60,11 @@ extension AlarmHistoryViewController: UITableViewDelegate, UITableViewDataSource
         
         if expandedIndexSet.contains(indexPath.row) {
             cell.infoLabel.numberOfLines = 0
+            cell.moreBtn.setImage(UIImage(systemName: "chevron.up"), for: .normal)
         } else {
             cell.infoLabel.numberOfLines = 1
+            cell.moreBtn.setImage(UIImage(systemName: "chevron.down"), for: .normal)
         }
-//        let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
-//        cell.settingData(isClicked: answerFilterDatasource, title: movieVM.title!, overview: movieVM.overview!, release_data: movieVM.release_data!,imagePath: imagePath)
         return cell
     }
     
@@ -84,10 +73,6 @@ extension AlarmHistoryViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//           let content = answerFilterDatasource
-//           content.expanded = !content.expanded
-//           self.alarmHistoryTableView.reloadRows(at: [indexPath], with: .automatic)
-        
         if(expandedIndexSet.contains(indexPath.row)){
             expandedIndexSet.remove(indexPath.row)
         } else {
@@ -96,8 +81,4 @@ extension AlarmHistoryViewController: UITableViewDelegate, UITableViewDataSource
 
         self.alarmHistoryTableView.reloadRows(at: [indexPath], with: .automatic)
        }
-    
-  
-    
-    
 }
