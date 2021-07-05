@@ -6,15 +6,14 @@
 //
 import UIKit
 
-
-
-
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController{
 
     @IBOutlet weak var searchCollectionView: UICollectionView!
 
     var networkProvider = MovieNetworkManager()
     private var movieListVM: MovieNowPlaying!
+    var searchMovie: [SearchMovie] = []
+    
     let searchController = UISearchController(searchResultsController: nil)
 
     let lineSpacing: CGFloat = 5
@@ -37,16 +36,31 @@ class SearchViewController: UIViewController {
         
         getMovieData()
     }
+    
+    var isFiltering: Bool {
+        let searchController = self.navigationItem.searchController
+        let isActive = searchController?.isActive ?? false
+        let isSearchBarHasText = searchController?.searchBar.text?.isEmpty == false
+        return isActive && isSearchBarHasText
+    }
+
 
     func getMovieData() {
 
         networkProvider.getMovies(target: .nowPlaying) { results in
 
             self.movieListVM = MovieNowPlaying(nowPlaying: results)
-
+            
             OperationQueue.main.addOperation {
                 self.searchCollectionView.reloadData()
             }
+        }
+    }
+    
+    func getSearchMovie(title: String) {
+        networkProvider.getSearchMovie(title: title) { results in
+
+            self.searchMovie = results
         }
     }
 }
@@ -54,6 +68,11 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         
+        guard let searchText = searchController.searchBar.text else { return }
+        print(searchText)
+        getSearchMovie(title: searchText)
+        self.searchCollectionView.reloadData()
+        print("--------------------", self.searchMovie)
     }
 }
 
@@ -61,7 +80,6 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerview = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "tttttt", for: indexPath) as! SearchCollectionReusableView
-        //headerview.backgroundColor = .red
         headerview.titleLabel.text = "금주 상품"
         return headerview
     }
@@ -71,17 +89,35 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.movieListVM.numberOfRowInSections(section)
+        
+        if isFiltering {
+            return self.searchMovie.count
+        }
+        else {
+            return self.movieListVM.numberOfRowInSections(section)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = searchCollectionView.dequeueReusableCell(withReuseIdentifier: "categoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
-        let movieVM = self.movieListVM.movieAtIndex(indexPath.section, index: indexPath.row)
-        let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
-        cell.posterImageView.kf.setImage(with: URL(string: imagePath))
-        cell.titleLabel.text = movieVM.title
-        cell.priceLabel.text = movieVM.release_data
-        return cell
+        
+        if isFiltering {
+            cell.titleLabel.text = searchMovie[indexPath.row].title
+            cell.priceLabel.text = searchMovie[indexPath.row].release_date
+            let imagePath = "https://image.tmdb.org/t/p/w500\(searchMovie[indexPath.row].poster_path)"
+            cell.posterImageView.kf.setImage(with: URL(string: imagePath))
+            return cell
+        }
+        else {
+            let movieVM = self.movieListVM.movieAtIndex(indexPath.section, index: indexPath.row)
+            let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
+            cell.posterImageView.kf.setImage(with: URL(string: imagePath))
+            cell.titleLabel.text = movieVM.title
+            cell.priceLabel.text = movieVM.release_data
+            return cell
+        }
+       
     }
     
 }

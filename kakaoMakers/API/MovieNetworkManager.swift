@@ -110,33 +110,29 @@ struct MovieNetworkManager: MovieNetwork {
         }
     }
     
+    func getSearchMovie(title: String, completion: @escaping ([SearchMovie]) -> ()) {
+        
+        provider.request(.search(title: title)) { (results) in
+            
+            switch results {
+            
+            case.success(let response):
+                do {
+                    let results: SearchMovieResults = try JSONDecoder().decode(SearchMovieResults.self, from: response.data)
+//                    print("-------------", results)
+                    completion(results.results)
+                  
+                }
+                catch let err {
+                    print(err)
+                }
+            
+            case.failure(let err):
+                print(err)
+                break
+                
+            }
+        }
+    }
     
-    
-//    func getDetailMovie(movieID: Int, completion: @escaping(DetailMovie) -> ()) {
-//
-//        provider.request(.details(id: movieID)) { (results) in
-//
-//            switch results {
-//
-//            case.success(let response):
-//
-//                do{
-//                    let result: DetailMovie = try JSONDecoder().decode(DetailMovie.self, from: response.data)
-//                    ProgressHUD.dismiss()
-//                    completion(result)
-//
-//                    print(movieID)
-//                }
-//                catch let err{
-//                    ProgressHUD.dismiss()
-//                    print(err)
-//                }
-//
-//            case.failure(let err):
-//                ProgressHUD.dismiss()
-//                print(err)
-//                break
-//            }
-//        }
-//    }
 }

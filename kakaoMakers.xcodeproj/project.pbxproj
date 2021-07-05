@@ -37,6 +37,7 @@
 		D25985C12678E93900395A4E /* MainHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25985C02678E93900395A4E /* MainHomeViewController.swift */; };
 		D25985C32678E98200395A4E /* CommingSoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25985C22678E98200395A4E /* CommingSoonViewController.swift */; };
 		D25985C52678E98C00395A4E /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25985C42678E98C00395A4E /* LikeViewController.swift */; };
+		D259B6C22693523800DB2ED1 /* SearchMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D259B6C12693523800DB2ED1 /* SearchMovie.swift */; };
 		D27CE089267A6AB400D7EC83 /* LikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27CE088267A6AB400D7EC83 /* LikeTableViewCell.swift */; };
 		D28AEEC1267A1DBD008E509E /* CommingSoonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28AEEC0267A1DBD008E509E /* CommingSoonTableViewCell.swift */; };
 		D28AEEC3267A3CB5008E509E /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28AEEC2267A3CB5008E509E /* CustomUIButton.swift */; };
@@ -108,6 +109,7 @@
 		D25985C02678E93900395A4E /* MainHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewController.swift; sourceTree = "<group>"; };
 		D25985C22678E98200395A4E /* CommingSoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommingSoonViewController.swift; sourceTree = "<group>"; };
 		D25985C42678E98C00395A4E /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
+		D259B6C12693523800DB2ED1 /* SearchMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovie.swift; sourceTree = "<group>"; };
 		D27CE088267A6AB400D7EC83 /* LikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeTableViewCell.swift; sourceTree = "<group>"; };
 		D28AEEC0267A1DBD008E509E /* CommingSoonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommingSoonTableViewCell.swift; sourceTree = "<group>"; };
 		D28AEEC2267A3CB5008E509E /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				D223FF742679BE130060BD99 /* Movie.swift */,
 				D223FF762679BE210060BD99 /* DetailMovie.swift */,
 				D25334A52686C9CE0031FFD2 /* MovieImage.swift */,
+				D259B6C12693523800DB2ED1 /* SearchMovie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,10 +231,10 @@
 		D25985BB2678E8B900395A4E /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				D2E21C3A268CD03B00BF69D9 /* MyPage.storyboard */,
 				D2C5AE882678D75F003B123D /* Main.storyboard */,
 				D25985B92678E82200395A4E /* Home.storyboard */,
 				D23CE907268CA77900C459C0 /* Alarm.storyboard */,
+				D2E21C3A268CD03B00BF69D9 /* MyPage.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				D2FF9A772682318800AFF268 /* MovieNowPlaying.swift in Sources */,
 				D2EC4732268EF6DC002DC5B0 /* PagingTableViewCell.swift in Sources */,
 				D25985C32678E98200395A4E /* CommingSoonViewController.swift in Sources */,
+				D259B6C22693523800DB2ED1 /* SearchMovie.swift in Sources */,
 				D2FF9A612682006C00AFF268 /* MainHomeTableViewCell.swift in Sources */,
 				D2EC472F268EEAA4002DC5B0 /* PagingImageCollectionViewCell.swift in Sources */,
 				D27CE089267A6AB400D7EC83 /* LikeTableViewCell.swift in Sources */,
