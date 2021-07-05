@@ -14,7 +14,7 @@ class MainHomeAllViewController: UIViewController {
     var movieNetworkProvider = MovieNetworkManager()
     private var movieListVM: MovieNowPlaying!
     
-    var likes: [Int] = []
+    lazy var likes: [Int:Int] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,7 @@ class MainHomeAllViewController: UIViewController {
     
 }
 
-extension MainHomeAllViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainHomeAllViewController: UITableViewDelegate, UITableViewDataSource, MainHomeTableViewCellDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.movieListVM == nil ? 0 : self.movieListVM.numberOfSections
@@ -71,6 +71,8 @@ extension MainHomeAllViewController: UITableViewDelegate, UITableViewDataSource 
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainTableViewCell", for: indexPath) as! MainHomeTableViewCell
+        cell.delegate = self
+        cell.index = indexPath.row
         
         let movieVM = self.movieListVM.movieAtIndex(indexPath.section, index: indexPath.row)
         cell.titleLabel.text = movieVM.title
@@ -78,9 +80,13 @@ extension MainHomeAllViewController: UITableViewDelegate, UITableViewDataSource 
         cell.oderLabel.text = "\(movieVM.id!)명이 주문했어요"
         let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
         cell.posterImageView.kf.setImage(with: URL(string: imagePath))
-        //let likeCount = movieVM.vote_count
-        //cell.likeBtn.setTitle(String(likeCount!), for: .normal)
         cell.likeBtn.setTitle("좋아요", for: .normal)
+        
+        if likes[indexPath.row] == 1 {
+            cell.isTouched = true
+        }else{
+            cell.isTouched = false
+        }
         return cell
     }
     
