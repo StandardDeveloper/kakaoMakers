@@ -26,7 +26,8 @@ class SearchViewController: UIViewController{
         navigationItem.title = "검색"
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
-        
+        //searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
         searchCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         searchCollectionView.delegate = self
         searchCollectionView.dataSource = self
@@ -72,7 +73,7 @@ extension SearchViewController: UISearchResultsUpdating {
         print(searchText)
         getSearchMovie(title: searchText)
         self.searchCollectionView.reloadData()
-        print("--------------------", self.searchMovie)
+        print("--------------------", self.searchMovie.count)
     }
 }
 
@@ -91,9 +92,11 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if isFiltering {
+            print("----------", searchMovie.count)
             return self.searchMovie.count
         }
         else {
+            print("===========",section)
             return self.movieListVM.numberOfRowInSections(section)
         }
         
@@ -118,6 +121,23 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
             return cell
         }
        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let homeSB = UIStoryboard(name: "Home", bundle: nil)
+        let detailVC = homeSB.instantiateViewController(withIdentifier: "detailVC") as! DetailViewController
+        
+        if isFiltering {
+            detailVC.movieId = searchMovie[indexPath.row].id
+            print("&&&&&&&&&&", searchMovie[indexPath.row].id)
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
+        else {
+            detailVC.movieId = movieListVM.movieAtIndex(indexPath.section, index: indexPath.row).id!
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
+        
     }
     
 }

@@ -12,6 +12,7 @@ struct SearchMovie {
     var title: String
     var release_date: String
     var poster_path: String
+    var id: Int
 }
 
 extension SearchMovie: Codable{
@@ -20,6 +21,7 @@ extension SearchMovie: Codable{
         case title
         case release_date
         case poster_path
+        case id
     }
     
     init(from decoder: Decoder) throws {
@@ -28,6 +30,7 @@ extension SearchMovie: Codable{
         title = try container.decode(String.self, forKey: .title)
         release_date = try container.decode(String.self, forKey: .release_date)
         poster_path = try container.decode(String.self, forKey: .poster_path)
+        id = try container.decode(Int.self, forKey: .id)
     }
 }
 

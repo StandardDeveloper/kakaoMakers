@@ -7,22 +7,6 @@
 
 import UIKit
 
-//protocol movieIndexProtocol {
-//    var protocolMovieIndex: Int { get set }
-//}
-//
-//struct MovieIndexSelection: movieIndexProtocol {
-//    //var movieIndex: Int
-//    var protocolMovieIndex: Int {
-//        get {
-//            return self.protocolMovieIndex
-//        }
-//        set {
-//            self.protocolMovieIndex = newValue
-//        }
-//    }
-//}
-
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailTableView: UITableView!
@@ -30,7 +14,6 @@ class DetailViewController: UIViewController {
     var networkProvider = MovieNetworkManager()
     var detailMove: DetailMovie?
     var movieImages = [MovieImage]()
-    //var movieProtocol = MovieIndexSelection()
     
     override func viewDidLoad() {
         super.viewDidLoad()

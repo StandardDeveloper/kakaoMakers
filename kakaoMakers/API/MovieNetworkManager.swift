@@ -90,9 +90,9 @@ struct MovieNetworkManager: MovieNetwork {
             switch results {
             case.success(let response):
                 do {
-                    let movieImageListJson = try? JSONDecoder().decode(MovieImageList.self, from: response.data)
+                    guard let movieImageListJson = try? JSONDecoder().decode(MovieImageList.self, from: response.data) else {return}
                     //print("dddd", movieImageListJson!)
-                    completion(movieImageListJson!.backdrops)
+                    completion(movieImageListJson.backdrops)
                     ProgressHUD.dismiss()
                     
                 }
@@ -119,7 +119,7 @@ struct MovieNetworkManager: MovieNetwork {
             case.success(let response):
                 do {
                     let results: SearchMovieResults = try JSONDecoder().decode(SearchMovieResults.self, from: response.data)
-//                    print("-------------", results)
+                    print("***************", results.results.count)
                     completion(results.results)
                   
                 }
