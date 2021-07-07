@@ -891,7 +891,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ms-i5-JJp" customClass="ExpandableLabel" customModule="ExpandableLabel">
-                                                    <rect key="frame" x="45" y="354" width="324" height="45"/>
+                                                    <rect key="frame" x="45" y="354" width="324" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -929,7 +929,7 @@
                                                 <constraint firstItem="4m1-mK-Rjb" firstAttribute="leading" secondItem="j6d-dU-55e" secondAttribute="leading" constant="45" id="lp3-bG-09D"/>
                                                 <constraint firstAttribute="trailing" secondItem="7ms-i5-JJp" secondAttribute="trailing" constant="45" id="n9j-5c-SGc"/>
                                                 <constraint firstItem="rRp-CU-Y6h" firstAttribute="leading" secondItem="j6d-dU-55e" secondAttribute="leading" constant="45" id="pXo-Hq-MRj"/>
-                                                <constraint firstItem="4m1-mK-Rjb" firstAttribute="top" secondItem="7ms-i5-JJp" secondAttribute="bottom" constant="20" id="rPA-xW-TCC"/>
+                                                <constraint firstItem="4m1-mK-Rjb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7ms-i5-JJp" secondAttribute="bottom" constant="20" id="rPA-xW-TCC"/>
                                                 <constraint firstAttribute="trailing" secondItem="4m1-mK-Rjb" secondAttribute="trailing" constant="45" id="rZ7-Ca-aR3"/>
                                                 <constraint firstAttribute="trailing" secondItem="rRp-CU-Y6h" secondAttribute="trailing" constant="45" id="uE8-l0-waS"/>
                                             </constraints>

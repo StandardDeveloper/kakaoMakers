@@ -128,7 +128,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0B-jW-fnk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5684" y="75"/>
+            <point key="canvasLocation" x="4022" y="806"/>
+        </scene>
+        <!--Notice View Controller-->
+        <scene sceneID="bs1-fC-DCG">
+            <objects>
+                <viewController storyboardIdentifier="noticeVC" id="OZz-ra-8DE" customClass="NoticeViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7kd-vS-rkh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jkc-8T-qoC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pcX-Mf-j1Z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Jkc-8T-qoC" firstAttribute="leading" secondItem="pcX-Mf-j1Z" secondAttribute="leading" id="9fq-JY-7K1"/>
+                            <constraint firstItem="pcX-Mf-j1Z" firstAttribute="trailing" secondItem="Jkc-8T-qoC" secondAttribute="trailing" id="aZF-SS-UM8"/>
+                            <constraint firstItem="Jkc-8T-qoC" firstAttribute="top" secondItem="pcX-Mf-j1Z" secondAttribute="top" id="ecB-L9-LK2"/>
+                            <constraint firstItem="pcX-Mf-j1Z" firstAttribute="bottom" secondItem="Jkc-8T-qoC" secondAttribute="bottom" id="iyB-XR-bxt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="noticeTableView" destination="Jkc-8T-qoC" id="nSB-bl-ofY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y7Q-pK-9Ae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4932" y="806"/>
         </scene>
         <!--로그인-->
         <scene sceneID="abV-Kq-akD">

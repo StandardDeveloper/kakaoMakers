@@ -26,10 +26,6 @@ class MyViewController: UIViewController {
         navigationSetup()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        //navigationItem.largeTitleDisplayMode = .always
-    }
-    
     func navigationSetup() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "마이"
@@ -110,9 +106,12 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let noticeVC = self.storyboard?.instantiateViewController(identifier: "noticeVC") as! NoticeViewController
         let webVC = self.storyboard?.instantiateViewController(identifier: "webVC") as! WebViewController
         
         switch indexPath.section {
+        case 1:
+            self.navigationController?.pushViewController(noticeVC, animated: true)
         case 2:
             if indexPath.row  == 0 {
                 webVC.navTitle = "현금영수증 정보 관리"
@@ -121,12 +120,8 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
                 webVC.navTitle = "환불관리"
                 self.navigationController?.pushViewController(webVC, animated: true)
             }
-           
         default:
             print("TT")
         }
-        
     }
-    
-    
 }
