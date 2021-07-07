@@ -23,7 +23,7 @@ class MainHomeAllViewController: UIViewController {
         mainTableView.register(nibName, forCellReuseIdentifier: "mainTableViewCell")
         
         mainTableView.rowHeight = UITableView.automaticDimension
-        mainTableView.estimatedRowHeight = 500
+        //mainTableView.estimatedRowHeight = 500
         
         mainTableView.delegate = self
         mainTableView.dataSource = self

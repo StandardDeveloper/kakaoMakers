@@ -16,6 +16,8 @@ class MainHomeNewViewController: UIViewController {
     var movieNetworkProvider = MovieNetworkManager()
     private var movieListVM: MovieUpComming!
     
+    lazy var likes: [Int:Int] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +25,7 @@ class MainHomeNewViewController: UIViewController {
         newTableView.register(nibName, forCellReuseIdentifier: "mainTableViewCell")
         
         newTableView.rowHeight = UITableView.automaticDimension
-        newTableView.estimatedRowHeight = 500
+        //newTableView.estimatedRowHeight = 500
 
         newTableView.delegate = self
         newTableView.dataSource = self
@@ -63,7 +65,7 @@ class MainHomeNewViewController: UIViewController {
     }
 }
 
-extension MainHomeNewViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainHomeNewViewController: UITableViewDelegate, UITableViewDataSource, MainHomeTableViewCellDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.movieListVM == nil ? 0 : self.movieListVM.numberOfSections
     }
@@ -73,8 +75,10 @@ extension MainHomeNewViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
         let cell = newTableView.dequeueReusableCell(withIdentifier: "mainTableViewCell", for: indexPath) as! MainHomeTableViewCell
+        
+        cell.delegate = self
+        cell.index = indexPath.row
         
         let movieVM = self.movieListVM.movieAtIndex(indexPath.section, index: indexPath.row)
         cell.titleLabel.text = movieVM.title
@@ -82,8 +86,24 @@ extension MainHomeNewViewController: UITableViewDelegate, UITableViewDataSource 
         cell.oderLabel.text = "\(movieVM.id!)명이 주문했어요"
         let imagePath = "https://image.tmdb.org/t/p/w500\(movieVM.poster_path!)"
         cell.posterImageView.kf.setImage(with: URL(string: imagePath))
+        cell.likeBtn.setTitle("좋아요", for: .normal)
+        if likes[indexPath.row] == 1 {
+            cell.isTouched = true
+        }else{
+            cell.isTouched = false
+        }
         return cell
        
+    }
+    
+    func didPreasHeart(for index: Int, like: Bool) {
+       
+        if like == true {
+            likes[index] = 1
+        }
+        else {
+            likes[index] = 0
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
