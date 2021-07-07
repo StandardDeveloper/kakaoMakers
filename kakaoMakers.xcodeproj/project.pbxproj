@@ -58,6 +58,7 @@
 		D2C68EBF268E13CA004FD6B1 /* FindIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C68EBE268E13CA004FD6B1 /* FindIDViewController.swift */; };
 		D2C68EC1268E13D2004FD6B1 /* FindPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C68EC0268E13D2004FD6B1 /* FindPWViewController.swift */; };
 		D2C68EC3268E1424004FD6B1 /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C68EC2268E1424004FD6B1 /* SignUPViewController.swift */; };
+		D2E1C3532695C66300189DDD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E1C3522695C66300189DDD /* WebViewController.swift */; };
 		D2E21C3B268CD03B00BF69D9 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E21C3A268CD03B00BF69D9 /* MyPage.storyboard */; };
 		D2EC472F268EEAA4002DC5B0 /* PagingImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EC472D268EEAA4002DC5B0 /* PagingImageCollectionViewCell.swift */; };
 		D2EC4730268EEAA4002DC5B0 /* PagingImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2EC472E268EEAA4002DC5B0 /* PagingImageCollectionViewCell.xib */; };
@@ -132,6 +133,7 @@
 		D2C68EBE268E13CA004FD6B1 /* FindIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDViewController.swift; sourceTree = "<group>"; };
 		D2C68EC0268E13D2004FD6B1 /* FindPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWViewController.swift; sourceTree = "<group>"; };
 		D2C68EC2268E1424004FD6B1 /* SignUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
+		D2E1C3522695C66300189DDD /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D2E21C3A268CD03B00BF69D9 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = SOURCE_ROOT; };
 		D2EC472D268EEAA4002DC5B0 /* PagingImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		D2EC472E268EEAA4002DC5B0 /* PagingImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PagingImageCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				D2C68EBE268E13CA004FD6B1 /* FindIDViewController.swift */,
 				D2C68EC0268E13D2004FD6B1 /* FindPWViewController.swift */,
 				D2C68EC2268E1424004FD6B1 /* SignUPViewController.swift */,
+				D2E1C3522695C66300189DDD /* WebViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				D212807E268618C900EF3178 /* SearchCollectionReusableView.swift in Sources */,
 				D223FF722679BE070060BD99 /* MovieNetworkManager.swift in Sources */,
 				D2C68EC1268E13D2004FD6B1 /* FindPWViewController.swift in Sources */,
+				D2E1C3532695C66300189DDD /* WebViewController.swift in Sources */,
 				D2C339C42680C26600866069 /* KaKaoCustomUIButton.swift in Sources */,
 				D23CE90E268CA7DD00C459C0 /* AlarmNoticeViewController.swift in Sources */,
 				D2FF9A79268232C000AFF268 /* MovieTopRated.swift in Sources */,

@@ -8,22 +8,26 @@
 import UIKit
 
 class MyViewController: UIViewController {
-
+    
     @IBOutlet weak var myPageTableView: UITableView!
     
-    var infoTitle =  ["휴대폰 번호", "알림/광고 동의 관리"]
+    var infoTitle =  ["알림/광고 동의 관리"]
     var infoTitle2 = ["현금영수증 정보 관리", "환불관리"]
     var infoTitle3 = ["버전정보", "오픈소스 라이센스", "개인정보 처리방침", "도움말 / 고객센터", "친구에게 공유하기"]
     var infoTitle4 = ["카카오 쇼핑안내"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         myPageTableView.delegate = self
         myPageTableView.dataSource = self
         myPageTableView.rowHeight = UITableView.automaticDimension
         
         navigationSetup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //navigationItem.largeTitleDisplayMode = .always
     }
     
     func navigationSetup() {
@@ -34,11 +38,6 @@ class MyViewController: UIViewController {
     }
     
     @IBAction func moveLoginPage(_ sender: Any) {
-        
-//        let mainSB = UIStoryboard(name: "MyPage", bundle: nil)
-//        let loginpageVC = mainSB.instantiateViewController(withIdentifier: "navVC") as! UINavigationController
-//        loginpageVC.modalPresentationStyle = .fullScreen
-//        present(loginpageVC, animated: true, completion: nil)
         
         let loginpageVC = self.storyboard?.instantiateViewController(withIdentifier: "navVC") as! UINavigationController
         loginpageVC.modalPresentationStyle = .fullScreen
@@ -107,6 +106,26 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
         let v = UIView(frame: CGRect(x: 0, y:0, width: tableView.frame.width, height: 10.0))
         v.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
         return v
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let webVC = self.storyboard?.instantiateViewController(identifier: "webVC") as! WebViewController
+        
+        switch indexPath.section {
+        case 2:
+            if indexPath.row  == 0 {
+                webVC.navTitle = "현금영수증 정보 관리"
+                self.navigationController?.pushViewController(webVC, animated: true)
+            } else {
+                webVC.navTitle = "환불관리"
+                self.navigationController?.pushViewController(webVC, animated: true)
+            }
+           
+        default:
+            print("TT")
+        }
+        
     }
     
     

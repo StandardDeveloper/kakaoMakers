@@ -115,6 +115,21 @@
             </objects>
             <point key="canvasLocation" x="4931.884057971015" y="75"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="a9m-qa-jYI">
+            <objects>
+                <viewController storyboardIdentifier="webVC" id="oi6-No-WNn" customClass="WebViewController" customModule="kakaoMakers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hFU-I7-8oB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vBf-Qe-pvh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n0B-jW-fnk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5684" y="75"/>
+        </scene>
         <!--로그인-->
         <scene sceneID="abV-Kq-akD">
             <objects>

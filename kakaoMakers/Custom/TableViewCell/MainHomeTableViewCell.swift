@@ -34,14 +34,14 @@ class MainHomeTableViewCell: UITableViewCell {
     
     @IBAction func likeBtnAction(_ sender: UIButton) {
         guard let idx = index else {return}
-        print("____________", sender.isSelected)
-        print("////////////", idx)
         if likeBtn.isSelected {
             isTouched = true
             delegate?.didPreasHeart(for: idx, like: true)
+            print("------------", idx)
         }else {
             isTouched = false
             delegate?.didPreasHeart(for: idx, like: false)
+            print("************", idx)
         }
         likeBtn.isSelected = !likeBtn.isSelected
         
