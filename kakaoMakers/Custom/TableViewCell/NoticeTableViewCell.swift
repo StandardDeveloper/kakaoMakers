@@ -7,8 +7,16 @@
 
 import UIKit
 
+protocol NoticeTableViewCellDelegate {
+    func didPreasSwitchBtn(section: Int, for index: Int, switchBtn: Bool)
+}
+
 class NoticeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var switchBtn: UISwitch!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

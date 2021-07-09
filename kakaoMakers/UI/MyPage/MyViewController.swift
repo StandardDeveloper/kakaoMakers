@@ -24,10 +24,15 @@ class MyViewController: UIViewController {
         myPageTableView.rowHeight = UITableView.automaticDimension
         
         navigationSetup()
+        lastTableViewCell()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func navigationSetup() {
-        navigationController?.navigationBar.prefersLargeTitles = true
+        
         navigationItem.title = "마이"
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
         navigationController?.navigationBar.barTintColor = .white
@@ -38,6 +43,12 @@ class MyViewController: UIViewController {
         let loginpageVC = self.storyboard?.instantiateViewController(withIdentifier: "navVC") as! UINavigationController
         loginpageVC.modalPresentationStyle = .fullScreen
         present(loginpageVC, animated: true, completion: nil)
+    }
+    
+    func lastTableViewCell() {
+        let footerView = UIView(frame: CGRect.zero)
+        //footerView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
+        myPageTableView.tableFooterView = footerView
     }
     
 }
@@ -66,6 +77,7 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
         
         let loginCell = myPageTableView.dequeueReusableCell(withIdentifier: "myPageLoginCell", for: indexPath) as! MyPageLoginTableViewCell
         let infoCell = myPageTableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath)
+        let detailCell = myPageTableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
         
         switch indexPath.section {
         case 0:
@@ -77,8 +89,15 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
             infoCell.textLabel?.text = infoTitle2[indexPath.row]
             return infoCell
         case 3:
-            infoCell.textLabel?.text = infoTitle3[indexPath.row]
-            return infoCell
+            detailCell.textLabel?.text = infoTitle3[indexPath.row]
+            if indexPath.row == 0 {
+                detailCell.detailTextLabel?.text = "v1.0"
+                detailCell.accessoryType = .none
+            }
+            else {
+                detailCell.detailTextLabel?.text = ""
+            }
+            return detailCell
         case 4:
             infoCell.textLabel?.text = infoTitle4[indexPath.row]
             return infoCell
@@ -95,6 +114,21 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             return 10.0
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 4 {
+            return 10.0
+        }
+        else {
+            return 0.0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let v = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 1))
+        v.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
+        return v
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

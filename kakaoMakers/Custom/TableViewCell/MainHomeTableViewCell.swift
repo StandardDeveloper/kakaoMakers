@@ -18,6 +18,7 @@ class MainHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var oderLabel: UILabel!
     @IBOutlet weak var likeBtn: HeartBtn!
+    var heartselction: Bool = false
     
     var delegate: MainHomeTableViewCellDelegate?
     var index: Int?
@@ -34,7 +35,10 @@ class MainHomeTableViewCell: UITableViewCell {
     
     @IBAction func likeBtnAction(_ sender: UIButton) {
         guard let idx = index else {return}
-        if likeBtn.isSelected {
+        
+        heartselction = !heartselction
+        
+        if heartselction {
             isTouched = true
             delegate?.didPreasHeart(for: idx, like: true)
             print("------------", idx)
@@ -42,7 +46,9 @@ class MainHomeTableViewCell: UITableViewCell {
             isTouched = false
             delegate?.didPreasHeart(for: idx, like: false)
             print("************", idx)
+            
         }
+        print(heartselction)
         likeBtn.isSelected = !likeBtn.isSelected
         
     }
