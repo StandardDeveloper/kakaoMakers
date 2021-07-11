@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Moya
+import SwiftyJSON
 
 class LoginPageViewController: UIViewController {
     
@@ -24,6 +26,9 @@ class LoginPageViewController: UIViewController {
     @IBOutlet weak var appleLoginBtn: UIButton!
     @IBOutlet weak var naverLoginBtn: UIButton!
     @IBOutlet weak var kakaoLoginBtn: UIButton!
+    
+    let provider = MoyaProvider<AuthAPI>()
+    let userDefaults = UserDefaults()
     
     lazy var backButton: UIBarButtonItem = {
         let buttonIcon = UIImage(systemName: "xmark")
@@ -157,5 +162,34 @@ class LoginPageViewController: UIViewController {
         kakaoLoginBtn.leftAnchor.constraint(equalTo: naverLoginBtn.rightAnchor, constant: 35).isActive = true
         
     }
-
+    
+    
+    @IBAction func loginBtn(_ sender: Any) {
+     
+        provider.request(.login(email: idTextfield.text!, password: pwTextfield.text!)) { response in
+            
+            switch response {
+            
+            case .success(let res):
+                if res.statusCode != 200 {
+                    
+                    print("tt")
+                }
+                else {
+                    let jsonData = JSON(res.data)
+                    let tokenInfo = jsonData["token"].string!
+                    UserDefaults.standard.set(tokenInfo, forKey: "token")
+                    print("++++Token++++", tokenInfo )
+                    self.dismiss(animated: true, completion: nil)
+                }
+                
+            case .failure(let err):
+                print(err)
+            }
+            
+            
+        }
+        
+    }
+    
 }

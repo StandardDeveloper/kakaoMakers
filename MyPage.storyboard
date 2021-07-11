@@ -218,6 +218,9 @@
                                 <rect key="frame" x="22" y="253" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="로그인"/>
+                                <connections>
+                                    <action selector="loginBtn:" destination="TL4-GY-Ilr" eventType="touchUpInside" id="0kQ-2M-5mJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnf-Se-95Z">
                                 <rect key="frame" x="143" y="291" width="69" height="30"/>
