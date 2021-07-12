@@ -11,6 +11,7 @@ pod 'SwiftyJSON'
 pod 'Kingfisher'
 pod 'Tabman', '~> 2.9'
 pod "ExpandableLabel"
+pod 'BRYXBanner'
 
   # Pods for kakaoMakers
 

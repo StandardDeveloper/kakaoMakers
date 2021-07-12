@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.3)
+  - BRYXBanner (0.8.4)
   - ExpandableLabel (0.5.2)
   - Kingfisher (6.3.0)
   - Moya (14.0.0):
@@ -13,6 +14,7 @@ PODS:
     - Pageboy (~> 3.6.0)
 
 DEPENDENCIES:
+  - BRYXBanner
   - ExpandableLabel
   - Kingfisher
   - Moya
@@ -23,6 +25,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - BRYXBanner
     - ExpandableLabel
     - Kingfisher
     - Moya
@@ -33,6 +36,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  BRYXBanner: 4fbd266f96ce000e4c6cc9a0558c446bd88d9801
   ExpandableLabel: c2fab6d27860c572d67134b30522a5917746171d
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
@@ -41,6 +45,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Tabman: 792ac76fd1ec95af175c93db880a3c47cabedc91
 
-PODFILE CHECKSUM: e9b73bf6f33b9190773db483fa7d86b4a4927d3c
+PODFILE CHECKSUM: 1d29a7835fe0cc1ec7cb2771445c0321c684e19b
 
 COCOAPODS: 1.10.1

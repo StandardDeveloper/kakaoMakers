@@ -8,6 +8,7 @@
 import UIKit
 import Moya
 import SwiftyJSON
+import BRYXBanner
 
 class LoginPageViewController: UIViewController {
     
@@ -173,7 +174,10 @@ class LoginPageViewController: UIViewController {
             case .success(let res):
                 if res.statusCode != 200 {
                     
-                    print("tt")
+                    let banner = Banner(title: "", subtitle: "아이디, 비밀번호 확인해주세요.", image: UIImage(named: "Icon"), backgroundColor: UIColor(red:255.0/255.0, green:222.0/255.0, blue:230.0/255.0, alpha:1.000))
+                    banner.dismissesOnTap = true
+                    banner.textColor = UIColor(red:160.0/255.0, green:8.0/255.0, blue:8.0/255.0, alpha:1.000)
+                    banner.show(duration: 2.0)
                 }
                 else {
                     let jsonData = JSON(res.data)
@@ -186,10 +190,6 @@ class LoginPageViewController: UIViewController {
             case .failure(let err):
                 print(err)
             }
-            
-            
         }
-        
     }
-    
 }

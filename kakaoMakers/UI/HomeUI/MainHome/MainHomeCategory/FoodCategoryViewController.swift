@@ -87,7 +87,7 @@ extension FoodCategoryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         ///  2등분하여 배치, 옆 간격이 1이므로 1을 빼줌
         let width = collectionView.safeAreaLayoutGuide.layoutFrame.width / 2 - inset - lineSpacing - 10
-        let size = CGSize(width: width, height: 280)
+        let size = CGSize(width: width, height: 270)
         return size
     }
 }
