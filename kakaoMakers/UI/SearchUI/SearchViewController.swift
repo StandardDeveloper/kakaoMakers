@@ -73,7 +73,6 @@ extension SearchViewController: UISearchResultsUpdating {
         print(searchText)
         getSearchMovie(title: searchText)
         self.searchCollectionView.reloadData()
-        print("--------------------", self.searchMovie.count)
     }
 }
 
@@ -92,7 +91,6 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if isFiltering {
-            print("----------", searchMovie.count)
             return self.searchMovie.count
         }
         else {
@@ -130,7 +128,6 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         
         if isFiltering {
             detailVC.movieId = searchMovie[indexPath.row].id
-            print("&&&&&&&&&&", searchMovie[indexPath.row].id)
             navigationController?.pushViewController(detailVC, animated: true)
         }
         else {

@@ -24,7 +24,7 @@ class PagingTableViewCell: UITableViewCell {
         pagingCollectionView.delegate = self
         pagingCollectionView.register(UINib(nibName: "PagingImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "pagingImageCollectionCell")
         pagingCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,7 +33,6 @@ class PagingTableViewCell: UITableViewCell {
     }
     
     func getMovieImages() {
-        print("&&&&&&&&&&&&", movieID)
         networkProvider.getMovieImages(movieID: movieID) { results in
 
             self.movieImages = results

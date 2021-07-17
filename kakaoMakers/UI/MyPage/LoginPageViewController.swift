@@ -183,7 +183,6 @@ class LoginPageViewController: UIViewController {
                     let jsonData = JSON(res.data)
                     let tokenInfo = jsonData["token"].string!
                     UserDefaults.standard.set(tokenInfo, forKey: "token")
-                    print("++++Token++++", tokenInfo )
                     self.dismiss(animated: true, completion: nil)
                 }
                 

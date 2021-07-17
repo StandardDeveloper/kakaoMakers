@@ -58,7 +58,6 @@ class MainHomeNewViewController: UIViewController {
                 let indexPath = self.newTableView.indexPathForSelectedRow
                 vc.movieId = movieListVM.movieAtIndex(indexPath!.section, index: indexPath!.row).id!//nowPlaying[indexPath!.row].id
                 
-                print("++++++++++++++++", vc.movieId)
             }
         }
         

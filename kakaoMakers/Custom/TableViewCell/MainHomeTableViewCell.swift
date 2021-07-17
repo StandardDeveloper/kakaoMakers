@@ -41,11 +41,9 @@ class MainHomeTableViewCell: UITableViewCell {
         if heartselction {
             isTouched = true
             delegate?.didPreasHeart(for: idx, like: true)
-            print("------------", idx)
-        }else {
+        } else {
             isTouched = false
             delegate?.didPreasHeart(for: idx, like: false)
-            print("************", idx)
             
         }
         print(heartselction)

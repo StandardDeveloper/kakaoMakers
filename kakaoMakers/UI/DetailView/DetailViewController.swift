@@ -54,10 +54,7 @@ class DetailViewController: UIViewController {
         networkProvider.getDetailMovie(movieID: movieId) { [self] result in
             
             self.detailMove = result
-    
-//            movieProtocol.protocolMovieIndex = movieId
-//            print("___________", movieProtocol.protocolMovieIndex)
-            
+
             OperationQueue.main.addOperation {
                 self.detailTableView.reloadData()
             }
@@ -78,7 +75,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource, UISc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = detailTableView.dequeueReusableCell(withIdentifier: "pagingCell", for: indexPath) as! PagingTableViewCell
-            print("+++++++++++", movieId)
             cell.config(with: movieId)
             cell.getMovieImages()
             return cell

@@ -44,7 +44,6 @@ extension AlarmHistoryViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("+++++++++++", section)
         return movieListVM.numberOfRowInSections(section)
     }
     

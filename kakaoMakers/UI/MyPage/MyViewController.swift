@@ -42,8 +42,6 @@ class MyViewController: UIViewController {
         self.navigationController?.navigationBar.isOpaque = true
         self.tabBarController?.tabBar.isOpaque = true
         
-        print("token", token!)
-        
         if( token != "" && token != nil) {
             tokenFlag = true
             OperationQueue.main.addOperation {
@@ -75,7 +73,6 @@ class MyViewController: UIViewController {
     
     func lastTableViewCell() {
         let footerView = UIView(frame: CGRect.zero)
-        //footerView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
         myPageTableView.tableFooterView = footerView
     }
 }
@@ -125,6 +122,7 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
         let loginCell = myPageTableView.dequeueReusableCell(withIdentifier: "myPageLoginCell", for: indexPath) as! MyPageLoginTableViewCell
         let infoCell = myPageTableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath)
         let detailCell = myPageTableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
+        let loginSuccessCell = myPageTableView.dequeueReusableCell(withIdentifier: "loginSuccess", for: indexPath) as! LoginSuccessTableViewCell
         
         //로그아웃
         if tokenFlag == false {
@@ -158,14 +156,13 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
         else {
             switch indexPath.section {
             case 0:
-                let loginSuccessCell = myPageTableView.dequeueReusableCell(withIdentifier: "loginSuccess", for: indexPath) as! LoginSuccessTableViewCell
+               
                 if(token != nil) {
                     networkProvider.getProfile(token: String(token!)) {  results in
                         loginSuccessCell.nameLabel.text = results.name
                         let imageURL = URL(string: results.avatar)
                         loginSuccessCell.profileImageView.kf.setImage(with: imageURL)
                         loginSuccessCell.emailLabel.text = results.email
-                        print("name, email", results.name, results.email)
                     }
                 }
                 return loginSuccessCell

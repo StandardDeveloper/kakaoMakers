@@ -23,7 +23,6 @@ class MainHomeAllViewController: UIViewController {
         mainTableView.register(nibName, forCellReuseIdentifier: "mainTableViewCell")
         
         mainTableView.rowHeight = UITableView.automaticDimension
-        //mainTableView.estimatedRowHeight = 500
         
         mainTableView.delegate = self
         mainTableView.dataSource = self
@@ -51,7 +50,6 @@ class MainHomeAllViewController: UIViewController {
                 let indexPath = self.mainTableView.indexPathForSelectedRow
                 vc.movieId = movieListVM.movieAtIndex(indexPath!.section, index: indexPath!.row).id!//nowPlaying[indexPath!.row].id
                 
-                print("++++++++++++++++", vc.movieId)
             }
         }
         
