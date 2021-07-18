@@ -22,7 +22,7 @@ struct MovieNetworkManager: MovieNetwork {
     
     let provider = MoyaProvider<MovieAPI>()
     
-    func getMovies(target: MovieAPI, completion: @escaping ([Movie]) -> ()) {
+    func getMovies(target: MovieAPI, completion: @escaping ([Movie]) -> () ) {
         
         provider.request(target) { (results) in
             
@@ -36,11 +36,6 @@ struct MovieNetworkManager: MovieNetwork {
                         completion(movieList.results)
                         ProgressHUD.dismiss()
                     }
-                    
-                }
-                catch let err {
-                    print(err)
-                    ProgressHUD.dismiss()
                 }
                 
             case.failure(let err):
@@ -119,12 +114,12 @@ struct MovieNetworkManager: MovieNetwork {
                 do {
                     let results: SearchMovieResults = try JSONDecoder().decode(SearchMovieResults.self, from: response.data)
                     completion(results.results)
-                  
+                    
                 }
                 catch let err {
                     print(err)
                 }
-            
+                
             case.failure(let err):
                 print(err)
                 break
